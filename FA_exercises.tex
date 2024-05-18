@@ -204,7 +204,7 @@ $$\lim_{x \rightarrow 0^+} \frac{|f_n(x)|}{g(x)} = 1 \qquad \forall n \in \mathb
 we have
 $$f_n \in L^p([0, 1]) \leftrightarrow g \in L^p([0, 1])$$
 so that
-$$f_n \notin L^p([0, 1]) \qquad \textrm{if} p \geq 4.$$
+$$f_n \notin L^p([0, 1]) \qquad \textrm{if} \qquad p \geq 4.$$
 The sequence $\{ f_n(x) \}_{n \in \mathbb{N}}$ can't converge in $L^p([0, 1])$ spaces if $p \geq 4$. \par 
 In the case $p = +\infty$, we have
 $$\norm{f_n(x)}_{\infty} = \esssup_{x \in (0, 1)} |\frac{\cos(nx)}{\sqrt[4]{x}}e^{-nx}| \leq \sup_{x \in (0,1)} |\frac{1}{\sqrt[4]{x}}| \rightarrow +\infty,$$
@@ -214,7 +214,6 @@ Since $[0, 1]$ is a bounded set we have the following embeddings:
 \begin{figure}[!ht]
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
-
 \path
 (3,2) node[below left]{$\huge{L_1}$};
 \path
@@ -234,6 +233,110 @@ Since $[0, 1]$ is a bounded set we have the following embeddings:
 \end{center}
 \end{figure}							
 The sequence $f_n(x)$ lives in "green" spaces.
+
+\chapter{Hilbert Spaces}
+\section*{Exercise $1$}
+Let $X = (C(0,1); \norm{ \cdot }_{\infty})$ and consider
+$$K = \{ f \in X : \int_0^{\frac{1}{2}} f(t) dt - \int_{\frac{1}{2}}^1 f(t) dt = 1 \}.$$
+Show that $K$ is closed and not empty, and determine the projection of $0$ over the set $K$.
+\section*{Solution}
+$K$ is not empty. To show that we can take:
+$$f(t) = \frac{\pi}{2} \sin(2 \pi t).$$
+Now we can consider:
+$$u(t) = \chi_{(0, \frac{1}{2})}(t) - \chi_{(\frac{1}{2}, 1}(t)$$
+and consider the following operator:
+$$(Tf) = \int_0^1 f u dt$$
+where
+$$T: C(0, 1) \rightarrow \mathbb{R}$$
+$$K = T^{-1}(\{ 1 \})$$
+since $\{ 1 \}$ is a singleton then it is closed; the contraimage of a closed set must be closed, so $K$ is closed.
+$$|Tf| \leq C \norm{f}_{\infty}$$
+$$f \in C(0, 1) \qquad \norm{f}_{\infty} \leq 1$$
+then
+$$f \notin K,$$
+that is the elements of $K$ are of the form
+$$\norm{ \cdot }_{\infty} > 1.$$
+We have that 
+$$f(x) \leq \norm{f}_{\infty} \leq 1 \qquad \forall x \in (0, 1)$$
+"by contradiction"
+$$f \in K \qquad \int_0^1 f u = 1$$
+$$1 = \int_0^1 f u \leq \int_0^1 |f| |u| \leq \norm{f}_{\infty} \int_0^1 dt = \norm{f}_{\infty} \leq 1.$$
+We have that
+$$|f u| \leq 1 \qquad \int_0^1 |f u| = 1$$
+so that
+$$| f u | = 1 \quad a.e.$$
+$$\int_0^1( 1 - | f u|) = 0 \qquad a.e.$$
+so that
+$$f u = 1 \qquad a.e. .$$
+So we obtain this contradiction:
+$$\begin{cases}
+		f = 1 \qquad if \qquad x \in (0, \frac{1}{2}) \\
+		f = -1 \qquad if \qquad x \in (\frac{1}{2}, 1)
+  \end{cases}
+$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.0]
+\draw[->] (-2.5,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-1.5)--(0,1.5)  node[left]{$y$};
+\draw[dashed] (0.5,-1.5)--(0.5,1.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\foreach \i in {0,0.1, 0.2,...,1.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=-2.:0.5, samples=100, variable=\x] plot ({\x}, {1.});
+\draw[blue, domain=0.5:3.0, samples=100, variable=\x] plot ({\x}, {-1.});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+Now we consider:
+$$d = \inf \{ \norm{ f }_{\infty} : f \in K \}$$
+$$\norm{ f }_{\infty} \leq 1 \qquad \implies \qquad f \notin K$$
+$$d = \inf \{ \norm{ f }_{\infty} : f \in K \} \geq 1,$$
+we can take $1 < \alpha < 2$ and $\epsilon = \frac{\alpha - 1}{\alpha}$.
+$$f_{\alpha} = -\frac{\alpha}{\epsilon}(x - \frac{1}{2})$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.8]
+\draw[->] (-2.5,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-1.5)--(0,1.5)  node[above]{$y$};
+\draw[dashed] (0.5,-1.5)--(0.5,1.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\foreach \i in {0,0.1, 0.2,...,1.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=-2.:0.2, samples=100, variable=\x] plot ({\x}, {1.5});
+\draw[blue, domain=0.2:0.8, samples=100, variable=\x] plot ({\x}, {-1.5 / 0.3 * (\x - 1. / 2.)});
+\draw[green, domain=0.5:0.8, samples=100, variable=\x] plot ({\x}, {1.5 / 0.3 * (\x - 1. / 2.)});
+\draw[blue, domain=0.8:2.0, samples=100, variable=\x] plot ({\x}, {-1.5});
+\draw[green, domain=0.8:2.0, samples=100, variable=\x] plot ({\x}, {1.5});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\clearpage
+Now we show that $f_{\alpha} = -\frac{\alpha}{\epsilon}(x - \frac{1}{2})$ belongs to $K$.
+$$\int_0^{\frac{1}{2}} f_{\alpha} - \int_{\frac{1}{2}}^1 f_{\alpha} = 1 \qquad \forall \alpha \in (1, 2)$$
+$$\norm{f_{\alpha}}_{\infty} = \alpha,$$
+$\alpha$ is the supremum,
+$$d = \inf \{ \norm{f}_{\infty} : f \in K \} \leq \norm{f_{\alpha}}_{\infty} = \alpha$$
+$$\alpha \in (1, 2)$$
+$$\begin{cases}
+	d \leq 2 \\
+	\forall \alpha \in (1,2)
+  \end{cases} \implies d \leq 1$$
+so that
+$$d = \inf \{ \norm{ f }_{\infty} : f \in K \} = 1,$$
+but this $\inf$ is not assumed, this is not a minimum, then
+$$\nexists f \in K \qquad \textrm{s.t.} \qquad d = \norm{f}_{\infty} = 1,$$
+$$d = d(0, K)$$
+$$0 \notin K.$$
+\clearpage
 
 
 
