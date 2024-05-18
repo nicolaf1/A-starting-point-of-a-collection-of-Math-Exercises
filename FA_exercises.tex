@@ -1,0 +1,243 @@
+% book of functional analysis exercises
+% nicola frosi
+% starting date 18-05-2024
+
+\documentclass[a4paper, twoside, openany]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage[margin=2.5 cm]{geometry}
+
+\usepackage{float}
+\usepackage{rotating}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, quotes}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\esssup}{\operatornamewithlimits{ess\,sup}}
+
+\begin{document}
+\chapter{Functional Spaces}
+\section*{Exercise $1$}
+Compute 
+$$\lim_{n \rightarrow +\infty} \int_1^{\infty} f_n(x) dx$$
+where
+$$f_n(x) = \frac{\sin(nx)}{x^3} e^{-n\sqrt{x}}$$
+for all $x \geq 1$ and for all $n \in \mathbb{N}$. 
+\section*{\normalsize{Solution}}
+This exercise is trivial using the Dominated Convergence Theorem. \par First we calculate the \textbf{punctual convergence}.
+$$\lim_{n \rightarrow \infty} f_n(x) = \lim_{n \rightarrow \infty} \frac{\sin(nx)}{x^3} e^{-n \sqrt{x}} = 0$$
+for all $x \geq 1$ since $\lim_{n \rightarrow \infty} \frac{\sin(nx)}{x^3} = 0$ and $e^{-n \sqrt{x}}$ is bounded. \par
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=6.]
+\draw[->] (-0.2,0)--(2.5,0) node[below]{$x$};   
+\draw[->] (0,-0.2)--(0,0.5)  node[left]{$y$};
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\path
+(1.5,0) node[below left]{$1.5$};ù
+\path
+(2.0,0) node[below left]{$2.0$};
+\path
+(2.5,0) node[below left]{$2.5$};
+\foreach \i in {0,0.1, 0.2,...,2.5} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=1:2.5, samples=100, variable=\x] plot ({\x}, {(sin ( \x r))/(\x * \x * \x) * exp(- sqrt (\x)});
+\draw[green, domain=1:2.5, samples=200, variable=\x] plot ({\x}, {(sin (2 * \x r))/(\x * \x * \x) * exp(-2 * sqrt (\x)});
+\draw[orange, domain=1:2.5, samples=300, variable=\x] plot ({\x}, {(sin (3 * \x r))/(\x * \x * \x) * exp(-3 * sqrt (\x)});
+\draw[red, domain=1:2.5, samples=400, variable=\x] plot ({\x}, {(sin (4 * \x r))/(\x * \x * \x) * exp(-4 * sqrt (\x)});
+\end{tikzpicture}
+\end{center}
+\caption{The sequence of functions $f_n(x)$.}
+\label{fig: 4.3}
+\end{figure}
+$f(x) = 0 \qquad \forall x \geq 1$ is the punctal limit. Now we search a dominant function.
+$$|f_n(x)| = |\frac{\sin(n x)}{x^3} e^{-n \sqrt{x}}| \leq \star ,$$
+since the sine and $e^{-n \sqrt{x}}$ are  bounded functions:
+$$-1 \leq \sin(n x) \leq 1 \qquad \forall n \in \mathbb{N} \qquad \forall x \in \mathbb{R}$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+\draw[->] (-10.,0)--(10.,0) node[below]{$x$};   
+\draw[->] (0,-1.5)--(0,1.5)  node[left]{$y$};
+\path
+(0,0) node[below left]{$0$};
+\draw[blue, domain=-10:10, samples=100, variable=\x] plot ({\x}, {(sin ( \x r))});
+\draw[green, domain=-10:10, samples=200, variable=\x] plot ({\x}, {(sin ( 2 * \x r))});
+\draw[orange, domain=-10:10, samples=300, variable=\x] plot ({\x}, {(sin ( 3 * \x r))});
+\draw[cyan, domain=-10:10, samples=400, variable=\x] plot ({\x}, {(sin ( 4 * \x r))});
+\draw[red, domain=-10:10, samples=500, variable=\x] plot ({\x}, {(sin ( 5 * \x r))});
+\draw[gray, domain=-10:10, samples=600, variable=\x] plot ({\x}, {(sin ( 6 * \x r))});
+\end{tikzpicture}
+\end{center}
+\caption{The sine function.}
+\label{fig: 4.3}
+\end{figure} \vspace{1 cm}
+$$e^{-n \sqrt{x}} \leq 1 \qquad \forall n \in \mathbb{N} \qquad x \geq 1$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=6.]
+\draw[->] (-0.2,0)--(2.5,0) node[below]{$x$};   
+\draw[->] (0,-0.2)--(0,0.5)  node[left]{$y$};
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\path
+(1.5,0) node[below left]{$1.5$};ù
+\path
+(2.0,0) node[below left]{$2.0$};
+\path
+(2.5,0) node[below left]{$2.5$};
+\foreach \i in {0,0.1, 0.2,...,2.5} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=1:2.5, samples=100, variable=\x] plot ({\x}, {(exp(- sqrt (\x)});
+\draw[green, domain=1:2.5, samples=200, variable=\x] plot ({\x}, {(exp(-2 * sqrt (\x)});
+\draw[orange, domain=1:2.5, samples=300, variable=\x] plot ({\x}, {(exp(-3 * sqrt (\x)});
+\draw[red, domain=1:2.5, samples=400, variable=\x] plot ({\x}, {(exp(-4 * sqrt (\x)});
+\end{tikzpicture}
+\end{center}
+\caption{The sequence of functions $e^{-n \sqrt{x}}$.}
+\label{fig: 4.3}
+\end{figure}
+$$\star \leq |\frac{1}{x^3}| = \frac{1}{x^3} = g(x) \qquad \forall n \in \mathbb{N}$$
+since $x \in [0, +\infty)$. Now we need to verify if $g \in L^1([0, +\infty))$. 
+$$\int_1^{+\infty} |g(x)| dx = \int_1^{+\infty} |\frac{1}{x^3}| dx = \int_1^{+\infty} \frac{1}{x^3} dx < +\infty$$
+since the summability criteria:
+$$\int_1^{+\infty} \frac{1}{x^{\alpha}} dx = \begin{cases}
+												\frac{1}{\alpha - 1} \qquad if \quad \alpha > 1 \\
+												+\infty \qquad if \quad \alpha \leq 1
+											\end{cases}$$
+Now we can apply the Dominated Convergence Theorem (or Lebesgue Theorem):
+$$\lim_{n \rightarrow +\infty} f_n(x) dx = \int_1^{+\infty} \lim_{n \rightarrow +\infty} f_n(x) dx = \int_1^{+\infty} \lim_{n \rightarrow +\infty} \frac{\sin(nx)}{x^3} e^{-n \sqrt{x}} dx = \int_1^{+\infty} 0 dx = 0.$$
+Then the solution is
+$$\lim_{n \rightarrow + \infty} \int_1^{+\infty} f_n(x) dx = \lim_{n \rightarrow +\infty} \frac{\sin(nx)}{x^3} e^{-n \sqrt{x}} dx = 0 \qquad \forall x \leq 1.$$
+\clearpage
+
+
+
+\chapter{$L^p$ Spaces}
+\section*{Exercise $1$}
+Analyze the convergence in $L^p([0, 1])$ with $1 \leq p < \infty$ of
+$$f_n(x) = \frac{\cos(nx) e^{-n x}}{\sqrt[4]{x}} \qquad for \quad x \in [0, 1] \qquad \forall n \in \mathbb{N}.$$
+For which $L^p$ the sequence converge to a certain function?
+\section*{Solution}
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=5.4]
+\draw[->] (-0.2,0)--(1.5,0) node[below]{$x$};   
+\draw[->] (0,-0.2)--(0,1.5)  node[left]{$y$};
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\foreach \i in {0,0.1, 0.2,...,1.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=0.05:1.0, samples=100, variable=\x] plot ({\x}, {(cos (\x) / \x^(1 / 4) * exp(- \x)});
+\draw[green, domain=0.05:1.0, samples=100, variable=\x] plot ({\x}, {(cos (2 * \x) / \x^(1 / 4) * exp(-2* \x)});
+\draw[orange, domain=0.05:1.0, samples=100, variable=\x] plot ({\x}, {(cos (3 * \x) / \x^(1 / 4) * exp(- 3 * \x)});
+\draw[violet, domain=0.05:1.0, samples=100, variable=\x] plot ({\x}, {(cos (4 * \x) / \x^(1 / 4) * exp(-4* \x)});
+\draw[red, domain=0.05:1.0, samples=100, variable=\x] plot ({\x}, {(cos (5 * \x) / \x^(1 / 4) * exp(-5* \x)});
+\draw[gray, domain=0.05:1.0, samples=100, variable=\x] plot ({\x}, {(cos (6 * \x) / \x^(1 / 4) * exp(-6* \x)});
+\draw[gray, domain=0.05:1.0, samples=100, variable=\x] plot ({\x}, {(cos (7 * \x) / \x^(1 / 4) * exp(-7* \x)});
+\draw[gray, domain=0.05:1.0, samples=100, variable=\x] plot ({\x}, {(cos (20 * \x) / \x^(1 / 4) * exp(-20* \x)});
+\end{tikzpicture}
+\end{center}
+\caption{The sequence of functions $f_n(x)$.}
+\label{fig: 4.3}
+\end{figure}
+First of all we search for which $p$ this sequence belongs to some $L^p$, applying the Dominated Convergence Theorem.
+$$|f_n(x)| = |\frac{\cos(nx)}{\sqrt[4]{x}} e^{-n x}| \leq \frac{1}{\sqrt[4]{x}} = g(x) \qquad x \in [0, 1]$$
+We know that $f_n(x)$ belongs to some $L^p$ if and only if
+$$\int_0^1 |f_n(x)|^p dx < +\infty.$$
+The exponents $p$ that satisfy this relations are the candidates.
+$$\int_0^1 |f_n(x)|^p dx = \int_0^1 |\frac{\cos(nx)}{\sqrt[4]{x}} e^{-n x}|^p dx \leq \int_0^1 |\frac{1}{\sqrt[4]{x}}|^p dx = \int_0^1 \frac{1}{x^{\frac{p}{4}}} dx.$$
+From the summability criteria:
+$$\int_1^{+\infty} \frac{1}{x^{\alpha}} dx = \begin{cases}
+												\frac{1}{\alpha - 1} \qquad if \quad \alpha > 1 \\
+												+\infty \qquad if \quad \alpha \leq 1
+											\end{cases},$$
+since
+$$|\frac{\cos(nx)}{\sqrt[4]{x}} e^{-n x}|^p \leq \bigl( \frac{1}{\sqrt[4]{x}} \bigl)^p$$
+we have that for $p \in [1, 4) \qquad f_n(x) \in L^p([0, 1]) \qquad \forall n \in \mathbb{N}.$
+\begin{itemize}
+\item $f_n \in L^1([0, 1])$;
+\item $f_n \in L^2([0, 1])$;
+\item $f_n \in L^3([0, 1])$.
+\end{itemize}
+\textbf{Punctual Convergence}:
+$$\lim_{n \rightarrow +\infty} f_n(x) = \lim_{n \rightarrow +\infty} \frac{\cos(nx)}{\sqrt[4]{x}} e^{-nx} = \lim_{n \rightarrow +\infty} \frac{\cos(nx)}{\sqrt[4]{x} e^{nx}} \rightarrow 0$$
+so
+$$f_n \rightarrow 0 \qquad \textrm{pointwise} \qquad \forall x \in [0,1],$$
+we can apply the comparison criterium.
+$$\lim_{x \rightarrow 0^+} f_n(x) \sqrt[4]{x} = \lim_{x \rightarrow 0^+} \frac{\cos(nx)}{\sqrt[4]{x}}e^{-nx} \sqrt[4]{x} = 1$$
+$$f_n(x) \sim \frac{1}{\sqrt[4]{x}} \qquad \textrm{for} \qquad x \rightarrow 0^+.$$
+Now we can analyze the convergence in $L^p([0, 1])$
+$$\norm{f_n - f}_{L^p}$$
+$$\norm{f_n(x) - f(x)}_{L^p([0, 1])}^p = \norm{f_n(x)}_{L^p([0,1])}^p = \norm{\frac{\cos(nx)}{\sqrt[4]{x} e^{nx}}}_{L^p([0,1])}^p = \int_0^1 |\frac{\cos(nx)}{\sqrt[4]{x} e^{-nx}}_{L^p([0,1])}|^p dx = \star$$
+since
+$$|\frac{\cos(nx)}{\sqrt[4]{x} e^{nx}}_{L^p([0,1])}|^p \leq g(x) = \frac{1}{x^{\frac{p}{4}}}$$
+where
+$$g \in L^p([0,1]) \qquad \textrm{for} \qquad 1 \leq p < 4,$$
+we can apply the Dominated Convergence Theorem
+$$\lim_{n \rightarrow +\infty} \norm{f_n(x) - f(x)}_{L^p([0, 1])}^p = \lim_{n \rightarrow +\infty} \int_0^1 |\frac{\cos(nx)}{\sqrt[4]{x}}e^{-nx}|^p dx = \int_0^1 \lim_{n \rightarrow +\infty} |\frac{\cos(nx)}{\sqrt[4]{x}} e^{-nx}|^p dx = 0.$$	
+So
+$$\lim_{n \rightarrow +infty} \norm{f_n(x) - f(x)}_{L^p([0, 1])} \rightarrow 0$$
+$$f_n(x) \rightarrow 0 \qquad in \qquad L^p([0, 1]) \qquad \forall p \in [1; 4).$$
+Since
+$$\lim_{x \rightarrow 0^+} \frac{|f_n(x)|}{g(x)} = 1 \qquad \forall n \in \mathbb{N}$$
+we have
+$$f_n \in L^p([0, 1]) \leftrightarrow g \in L^p([0, 1])$$
+so that
+$$f_n \notin L^p([0, 1]) \qquad \textrm{if} p \geq 4.$$
+The sequence $\{ f_n(x) \}_{n \in \mathbb{N}}$ can't converge in $L^p([0, 1])$ spaces if $p \geq 4$. \par 
+In the case $p = +\infty$, we have
+$$\norm{f_n(x)}_{\infty} = \esssup_{x \in (0, 1)} |\frac{\cos(nx)}{\sqrt[4]{x}}e^{-nx}| \leq \sup_{x \in (0,1)} |\frac{1}{\sqrt[4]{x}}| \rightarrow +\infty,$$
+so
+$$f_n \nrightarrow 0 \qquad \textrm{in} \qquad L^{\infty}((0, 1)).$$		
+Since $[0, 1]$ is a bounded set we have the following embeddings:	
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+
+\path
+(3,2) node[below left]{$\huge{L_1}$};
+\path
+(3.0,1) node[below left]{$\huge{L_2}$};
+\path
+(2.75,0.75) node[below left]{$\huge{L_3}$};
+\path
+(2.35,0.5) node[below left]{$\huge{L_4}$};
+\path
+(0.5,0.2) node[below left]{$\huge{L_{\infty}}$};
+\draw[thick,black, fill=green, opacity=0.2] (0 ,0) circle({sqrt(10)});     
+\draw[thick,black, fill=green, opacity=0.2] (0 ,0) circle({sqrt(8)});     
+\draw[thick,black, fill=green, opacity=0.2] (0 ,0) circle({sqrt(6)});     
+\draw[thick,black, fill=white, opacity=1.0] (0 ,0) circle({sqrt(4)});         
+\draw[thick,black, fill=white, opacity=1.0] (0 ,0) circle({sqrt(1)}) node[text=black]{$\huge{L_{\infty}}$};;     
+\end{tikzpicture}
+\end{center}
+\end{figure}							
+The sequence $f_n(x)$ lives in "green" spaces.
+
+\chapter{Hilbert Spaces}
+\section*{Exercise $1$}
+
+
+
+\end{document}
