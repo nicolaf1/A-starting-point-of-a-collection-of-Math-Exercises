@@ -25,7 +25,11 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\esssup}{\operatornamewithlimits{ess\,sup}}
 
+\title{\textbf{\huge{\textit{A collection of Functional Analysis exercises}}}}
+
+
 \begin{document}
+\maketitle
 \chapter{Functional Spaces}
 \section*{Exercise $1$}
 Compute 
@@ -127,9 +131,6 @@ $$\lim_{n \rightarrow +\infty} f_n(x) dx = \int_1^{+\infty} \lim_{n \rightarrow 
 Then the solution is
 $$\lim_{n \rightarrow + \infty} \int_1^{+\infty} f_n(x) dx = \lim_{n \rightarrow +\infty} \frac{\sin(nx)}{x^3} e^{-n \sqrt{x}} dx = 0 \qquad \forall x \leq 1.$$
 \clearpage
-
-
-
 \chapter{$L^p$ Spaces}
 \section*{Exercise $1$}
 Analyze the convergence in $L^p([0, 1])$ with $1 \leq p < \infty$ of
@@ -337,9 +338,122 @@ $$\nexists f \in K \qquad \textrm{s.t.} \qquad d = \norm{f}_{\infty} = 1,$$
 $$d = d(0, K)$$
 $$0 \notin K.$$
 \clearpage
-
-
-
-
+\chapter{Operators}
+\section*{Exercise $1$}
+Let 
+$$a(x) = \begin{cases}
+			x \qquad if \quad x \in (0, \frac{1}{2}] \\
+			0 \qquad if \quad x \in (\frac{1}{2}, 1]
+		 \end{cases}$$
+and consider the operator
+$$T : L^2(0, 1) \rightarrow L^2(0, 1)$$
+given by
+$$Tf(x) = a(x) f(x), \qquad x \in (0, 1).$$
+Show that $T \in \mathcal{L}(L^2[0,1])$ and compute $\norm{T}$.
+\section*{Solution}
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.0]
+\draw[->] (-2.5,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-1.5)--(0,1.5)  node[left]{$y$};
+\draw[dashed] (0.5,-1.5)--(0.5,1.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\path
+(1.0,1.0) node[below left]{$a(x)$};
+\foreach \i in {0,0.1, 0.2,...,1.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[red, domain=0.:0.5, samples=100, variable=\x] plot ({\x}, {\x});
+\draw[red, domain=0.5:1.0, samples=100, variable=\x] plot ({\x}, {0.});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+$$f \in L^2(0, 1)$$
+$$\norm{T f}_{L^2(0, 1)}^2 = \int_0^1 a(x)^2 f(x)^2 dx \leq \frac{1}{4} \int_0^1 f(x)^2 dx = \frac{1}{4} \norm{f}_{L^2(0,1)}^2$$
+so that
+$$\norm{T}_{\mathcal{L}(L^2(0,1))} \leq \frac{1}{2}.$$
+Then we want to show that $\frac{1}{2}$ is the value of the norm, that is
+$$\norm{T} = \frac{1}{2}.$$
+We define
+$$f_n(x) = \begin{cases}
+			\sqrt{n} \qquad if \quad x \in [\frac{1}{2} - \frac{1}{n}, \frac{1}{2}], \qquad n \geq 2 \\
+			0 \qquad \textrm{otherwise}
+		   \end{cases}$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.0]
+\draw[->] (-2.5,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-1.5)--(0,3.5)  node[left]{$y$};
+\draw[dashed] (0.5,-1.5)--(0.5,3.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\path
+(1.0,1.0) node[below left]{$f_n(x)$};
+\foreach \i in {0,0.1, 0.2,...,1.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[red, domain=0.:0.5, samples=100, variable=\x] plot ({\x}, {sqrt (2)});
+\draw[red, domain=1./6:0.5, samples=100, variable=\x] plot ({\x}, {sqrt (3)});
+\draw[red, domain=1./4:0.5, samples=100, variable=\x] plot ({\x}, {sqrt (4)});
+\draw[red, domain=3./10:0.5, samples=100, variable=\x] plot ({\x}, {sqrt (5)});
+\draw[red, domain=1./3:0.5, samples=100, variable=\x] plot ({\x}, {sqrt (6)});
+\draw[red, domain=5./14:0.5, samples=100, variable=\x] plot ({\x}, {sqrt (7)});
+\draw[red, domain=0.5:1.0, samples=100, variable=\x] plot ({\x}, {0.});
+\draw[->] (0.1,-0.5)--(0.45,-0.5);
+\path
+(0.1, -0.6) node[below]{$\frac{1}{2} - \frac{1}{n}$};
+\end{tikzpicture}
+\end{center}
+\end{figure}
+$$\norm{f_n(x)}_{L^2(0,1)}^2 = \int_0^1 f_n(x)^2 = 1$$
+Now we compute the norm of the image:
+$$\norm{T f_n(x)}_{L^2(0,1)}^2 = \int_0^1 a(x)^2 f_n(x)^2 dx \geq \star$$
+we can minor the integral with
+$$\star \geq \int_{\frac{1}{2} - \frac{1}{n}}^{\frac{1}{2}} n(\frac{1}{2} - \frac{1}{n})^2 dx = (\frac{1}{2} - \frac{1}{n})^2 \rightarrow \frac{1}{4} \qquad \textrm{for} \quad n \rightarrow +\infty$$
+so that
+$$\norm{T}_{\mathcal{L}(L^2(0,1))} = \frac{1}{2}.$$
+We can characterize the norm in various ways.
+$$\norm{T}_{\mathcal{L}(L^2(0,1))} = \sup_{f \in L^2(0,1) \quad \norm{f}_{L^2} = 1} \frac{\norm{Tf}_{L^2(0,1)}}{\norm{f}_{L^2(0,1)}} \leq \frac{1}{2}.$$
+We have shown that 
+$$\norm{Tf_n(x)}_{L^2(0,1)}^2 \geq \frac{1}{4},$$
+that is
+$$\norm{T f_n(x)}_{L_2(0,1)} \geq \frac{1}{2},$$
+but at the same time we have
+$$\norm{T} \leq \frac{1}{2}$$
+then
+$$\norm{T f_n(x)} = \frac{1}{2}.$$
+\clearpage
+\section*{Exercise $2$}
+Let $(f'_h)_{h \in \mathbb{N}} \in L^p$ for some $p$, with the following hypotheses:
+\begin{itemize}
+\item $(f'_h)_{h \in \mathbb{N}}$ is bounded in $L^p$ for some $p$;
+\item $f_h(0)$ is bounded.
+\end{itemize}
+Show that $(f_h)_{h \in \mathbb{N}}$ is compact (relatively) in $(C([0,1]), \norm{\cdot}_{\infty}$.
+\section*{Solution}
+From the hypotheses we can suppose that
+$$f_h(x) = f_h(0) + \int_0^x f'_h(y) dy \qquad x \in [0, 1].$$
+Since we have to show the compactness in the set of continuous fuunctions we need to utilize the Ascoli-Arzel\`{a} theorem. \par
+Let $C > 0$ constant. \par 
+\textbf{Equiboundedness}
+$$h \in \mathbb{N}, \qquad x \in [0, 1]$$
+$$|f_h(x)| \leq |f_h(0)| + \int_0^x |f'_h(y)| dy \leq \star$$
+using the hypothesis $2$ and the H\"{o}lder inequality
+$$\star \leq C + \norm{f'_h}_{L^p(0,1)} x^{\frac{1}{p'}} \leq M$$
+so that
+$$|f_h(x)| \leq M,$$
+that is $f_h$ is equibounded. \par   
+\textbf{Equicontinuity}
+$$x, y \in [0, 1], \qquad x < y$$
+$$f_h(y) - f_h(x) \leq \int_x^y |f'_h(w)| dw \leq \star$$
+using the H\"{o}lder inequality
+$$\star \leq \norm{f'_h}_{L^p(0,1)}|y - x|^{\frac{1}{p'}}.$$
+This shows that the fuunctions $f_h$ are equi-h\"{o}lder  with exponent $\frac{1}{p'}$, in particular they are eqicontinuous. \par   
+Then from the Ascoli-Arzel\`{a} theorem they are relatively compact.
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.7)  18 MAY 2024 23:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.7)  27 MAY 2024 21:37
 entering extended mode
  \write18 enabled.
 **FA_exercises.tex
@@ -503,34 +503,23 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box66
 )
-(./FA_exercises.aux
-
-LaTeX Warning: Label `fig: 4.3' multiply defined.
-
-
-LaTeX Warning: Label `fig: 4.3' multiply defined.
-
-
-LaTeX Warning: Label `fig: 4.3' multiply defined.
-
-)
+No file FA_exercises.aux.
 \openout1 = `FA_exercises.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -587,107 +576,124 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Chapter 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Missing character: There is no ù in font nullfont!
 
-Overfull \hbox (12.07954pt too wide) in paragraph at lines 62--63
- [] 
- []
-
-
-Overfull \hbox (6.39128pt too wide) in paragraph at lines 84--85
- [] 
- []
+LaTeX Warning: No \author given.
 
 [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Chapter 1.
 Missing character: There is no ù in font nullfont!
 
-Overfull \hbox (12.07954pt too wide) in paragraph at lines 112--113
+Overfull \hbox (12.07954pt too wide) in paragraph at lines 66--67
  [] 
  []
 
-[2]
+
+Overfull \hbox (6.39128pt too wide) in paragraph at lines 88--89
+ [] 
+ []
+
+[2
+
+]
+Missing character: There is no ù in font nullfont!
+
+Overfull \hbox (12.07954pt too wide) in paragraph at lines 116--117
+ [] 
+ []
+
+[3]
 Chapter 2.
-[3
+[4
 
 
-] [4]
+] [5]
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 218.
-
-
-LaTeX Font Warning: Command \huge invalid in math mode on input line 220.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 219.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 222.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 221.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 224.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 223.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 226.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 225.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 231.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 227.
+
+
+LaTeX Font Warning: Command \huge invalid in math mode on input line 232.
 
 Missing character: There is no ; in font nullfont!
-[5]
+[6]
 Chapter 3.
-[6
+[7
 
-] [7] [8
+] [8] [9
+
+]
+Chapter 4.
+[10
+
+
+] [11] [12
 
 ] (./FA_exercises.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 22232 strings out of 480204
- 447402 string characters out of 5895011
- 706262 words of memory out of 5000000
- 39911 multiletter control sequences out of 15000+600000
- 485235 words of font info for 71 fonts, out of 8000000 for 9000
+ 22417 strings out of 480204
+ 450875 string characters out of 5895011
+ 705823 words of memory out of 5000000
+ 40087 multiletter control sequences out of 15000+600000
+ 492891 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  84i,9n,89p,435b,762s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
-0pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl1000.
+ </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl1000.60
+0pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.
 600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx100
 0.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
 000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
 x1440.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
 cbx2488.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecbx2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msbm7.pfb>
-Output written on FA_exercises.pdf (8 pages, 224365 bytes).
+/ecbx2074.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecrm1200.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecbi2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm7.pfb>
+Output written on FA_exercises.pdf (12 pages, 260253 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 317 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
