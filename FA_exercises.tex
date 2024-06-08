@@ -38,7 +38,7 @@ where
 $$f_n(x) = \frac{\sin(nx)}{x^3} e^{-n\sqrt{x}}$$
 for all $x \geq 1$ and for all $n \in \mathbb{N}$. 
 \section*{\normalsize{Solution}}
-This exercise is trivial using the Dominated Convergence Theorem. \par First we calculate the \textbf{punctual convergence}.
+This exercise is trivial using the Dominated Convergence Theorem. \par First we calculate the \textbf{pointwise convergence}.
 $$\lim_{n \rightarrow \infty} f_n(x) = \lim_{n \rightarrow \infty} \frac{\sin(nx)}{x^3} e^{-n \sqrt{x}} = 0$$
 for all $x \geq 1$ since $\lim_{n \rightarrow \infty} \frac{\sin(nx)}{x^3} = 0$ and $e^{-n \sqrt{x}}$ is bounded. \par
 \begin{figure}[!ht]
@@ -131,6 +131,144 @@ $$\lim_{n \rightarrow +\infty} f_n(x) dx = \int_1^{+\infty} \lim_{n \rightarrow 
 Then the solution is
 $$\lim_{n \rightarrow + \infty} \int_1^{+\infty} f_n(x) dx = \lim_{n \rightarrow +\infty} \frac{\sin(nx)}{x^3} e^{-n \sqrt{x}} dx = 0 \qquad \forall x \leq 1.$$
 \clearpage
+\section*{Exercise $2$}
+Compute
+$$\lim_{n \rightarrow \infty} \int_0^1 f_n(x) dx$$
+where 
+$$f_n(x) = \frac{x}{1 + x^{2n}} \qquad \textrm{with} \qquad x \in (0, 1).$$
+\section*{Solution}
+We need to apply the Dominated Converge Theorem. \par 
+First of all we analyze the \textbf{pointwise convergence}.
+$$\lim_{n \rightarrow \infty} f_n(x) = \lim_{n \rightarrow \infty} \frac{x}{1 + x^{2n}},$$
+if $x 	\in [0, 1)$ we have
+$$\lim_{n \rightarrow \infty} \frac{x}{1 + x^{2n}} = x$$
+since $x^{2n} \rightarrow 0$ for $x \in [0, 1)$. \par
+If $x = 1$,
+$$\lim_{n \rightarrow \infty} \frac{x}{1 +x^{2n}} = \lim_{n \rightarrow \infty} \frac{1}{1 + 1^{2n}} = \frac{1}{2}.$$
+The pointwise limit is
+$$\lim_{n \rightarrow \infty} f_n(x) = \begin{cases}
+										x \qquad \textrm{if} \qquad x \in [0, 1) \\
+										\frac{x}{2} \qquad \textrm{if} \qquad x = 1
+									  \end{cases}$$ 
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=5.]
+\draw[->] (-1.,0)--(2.,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,1.5)  node[left]{$y$};
+\draw[dashed] (1,-0.5)--(1,1.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(1,0) node[below left]{$1$};
+\foreach \i in {0,0.1, 0.2,...,1.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=0:1, samples=100, variable=\x] plot ({\x}, {\x / (1 + \x^2});
+\draw[green, domain=0:1, samples=100, variable=\x] plot ({\x}, {\x / (1 + \x^4});
+\draw[orange, domain=0:1, samples=100, variable=\x] plot ({\x}, {\x / (1 + \x^6});
+\draw[cyan, domain=0:1, samples=100, variable=\x] plot ({\x}, {\x / (1 + \x^8});
+\draw[red, domain=0:1, samples=100, variable=\x] plot ({\x}, {\x / (1 + \x^10});
+\end{tikzpicture}
+\end{center}
+\end{figure} \vspace{1 cm}
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=5.]
+\draw[->] (-1.,0)--(2.,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,1.5)  node[left]{$y$};
+\draw[dashed] (1,-0.5)--(1,1.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(1,0) node[below left]{$1$};
+\foreach \i in {0,0.1, 0.2,...,1.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=0:1, samples=100, variable=\x] plot ({\x}, {\x});
+\draw[thick,red, fill=red, opacity=1.0] (1 ,0.5) circle({0.01});  
+\end{tikzpicture}
+\end{center}
+\end{figure} \vspace{1 cm}
+Now we find the dominant function.
+$$\exists g \in L^1(0, 1) \qquad \textrm{s. t.} \qquad |f_n(x)| \leq g?$$
+$$|f_n(x)| = |\frac{x}{1 + x^{2n}}| \leq \frac{x}{1 + x^{2n}} \leq x = g(x) \qquad \forall n \in \mathbb{N}, \qquad \forall x \in (0, 1).$$
+$$\int_0^1 |g(x)| dx = \int_0^1 |x| dx = \int_0^1 x dx = [ \frac{x^2}{2}]_0^1 = \frac{1}{2} < +\infty$$
+so that
+$$g \in L^1(0,1).$$
+We can now apply the Dominated Convergence Theorem.
+$$\lim_{n \rightarrow \infty} \int_0^1 \frac{x}{1 + x^{2n}} dx = \int_0^1 \lim_{n \rightarrow \infty} \frac{x}{1 + x^{2n}} dx = \int_0^1 x dx = \frac{1}{2}.$$
+The solution is
+$$\lim_{n \rightarrow \infty} \int_0^1 \frac{x}{1 + x^{2n}} dx = \frac{1}{2}.$$
+\section*{Exercise $3$}
+Studying convergence in $L^1([1, +\infty))$ of
+$$f_n(x) = \frac{\cos(nx)}{n^2 + x} \frac{1}{x^2} \qquad \forall x \geq 1 \qquad \forall n \in \mathbb{N}.$$
+\section*{Solution}
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\draw[->] (-0.5,0)--(10.,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,1.5)  node[left]{$y$};
+\draw[dashed] (1,-0.5)--(1,1.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(1,0) node[below left]{$1$};
+\path
+(10,0) node[below left]{$10$};
+\foreach \i in {1.,1.1, 1.2,...,10.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=1.:10., samples=100, variable=\x] plot ({\x}, {(cos(\x) / (1 + \x)) * (1. / \x^2)});
+\draw[green, domain=1.:10., samples=100, variable=\x] plot ({\x}, {(cos(2 * \x) / (4. + \x)) * (1. / \x^2)});
+\draw[orange, domain=1.:10., samples=100, variable=\x] plot ({\x}, {(cos(3 * \x) / (9. + \x)) * (1. / \x^2)});
+\draw[magenta, domain=1.:10., samples=100, variable=\x] plot ({\x}, {(cos(4 * \x) / (16. + \x)) * (1. / \x^2)});
+\draw[red, domain=1.:10., samples=100, variable=\x] plot ({\x}, {(cos(5 * \x) / (25. + \x)) * (1. / \x^2)});
+\end{tikzpicture}
+\end{center}
+\end{figure} \vspace{1 cm}
+Convergence in $L^1([0, +\infty))$:
+$$\norm{f_n - f}_{L^1([1; +\infty))} = \int_1^{+\infty} |f_n - f| dx \rightarrow 0$$
+\textbf{POINTWISE CONVERGENCE}
+$$\lim_{n \rightarrow \infty} f_n(x) = \lim_{n \rightarrow \infty} \frac{\cos(nx)}{n^2 + x} \frac{1}{x^2} = \star$$
+$$-1 \leq \cos(nx) \leq 1$$
+$$\star = 0,$$ù
+so the pointwise limit is
+$$f(x) = 0 \qquad \forall x \geq 1.$$
+Now we need to find a dominant function:
+$$\exists g \in L^1([1; +\infty)) \qquad \textrm{s.t.} \qquad |f_n(x)| \leq g \qquad \forall x \geq 1 \qquad \forall n \in \mathbb{N}$$
+$$|f_n(x)| = |\frac{\cos(nx)}{n^2 + x} \frac{1}{x^2}| \leq \frac{1}{n^2 + x} \frac{1}{x^2} \leq \frac{1}{x} \frac{1}{x^2} =\frac{1}{x^3} = g(x) \qquad \forall x \geq 1 \qquad \forall n \in \mathbb{N}$$
+$$\int_1^{+\infty} |g(x)| dx = \int_1^{+\infty} |\frac{1}{x^3}| dx = \int_1^{+\infty} \frac{1}{x^3} dx < +\infty$$
+summability criteria:
+$$\int_1^{+\infty} \frac{1}{x^{\alpha}} dx = \begin{cases}
+												\frac{1}{\alpha - 1} \qquad if \quad \alpha > 1 \\
+												+\infty \qquad if \quad \alpha \leq 1,
+											\end{cases}$$
+then
+$$g \in L^1[1; +\infty).$$
+$$\lim_{n \rightarrow \infty} \norm{f_n - f}_{L^1([1; +\infty))} \rightarrow 0$$
+$$\lim_{n \rightarrow \infty} |f_n - f| dx \rightarrow 0$$
+$$iff$$
+$$\lim_{n \rightarrow \infty} \int_1^{+\infty} |f_n| dx \rightarrow 0.$$
+Now we can apply the Dominated Convergence Theorem:
+$$\lim_{n \rightarrow +\infty} \int_1^{+\infty} |f_n| dx = \int_1^{+\infty} \lim_{n \rightarrow +\infty} |f_n| dx = \int_1^{+\infty} \lim_{n \rightarrow +\infty} |\frac{\cos(nx}{n^2 + x} \frac{1}{x^2}| dx$$
+$$= \int_1^{+\infty} \lim_{n \rightarrow +\infty} (\frac{\cos(nx)}{n^2 + x} \frac{1}{x^2} dx = \int_1^{+\infty} 0 dx = 0,$$
+so that
+$$f_n \rightarrow 0 \qquad \textrm{in} \qquad L^1([1; +\infty)).$$									
+\clearpage
+\section*{Exercise $4$}
+Let $f_n(x) = \sum_{n=1}^{\infty} \frac{|\sin(nx)|}{2^n} \qquad x \in [0, \pi]$. Compute
+$$\int_0^{\pi} f(x) dx.$$
+\section*{Solution}
+Remember that a series is the limit of the partial sums. If the partial sums are formed by positive terms, then the series are monotone. We consider
+$$f_h(x) = \sum_{n = 1}^{h} \frac{|\sin(nx)|}{2^n}.$$
+We have truncated the series up to the $h$ term. If we consider the truncated series we have that $f_h(x)$ is monotone, in fact
+$$0 \leq f_h \leq f_{h + 1}.$$
+Furthermore 
+$$f_h(x) = \sum_{h=1}^{h} \frac{|\sin(nx)|}{2^n} \rightarrow f(x) \qquad \textrm{for} \qquad h \rightarrow \infty.$$
+Then we can apply the Beppo Levi's Theorem:
+$$\int_0^{\pi} f(x) dx = \int_0^{\pi} \lim_{h \rightarrow \infty} f_h(x) dx = \lim_{h \rightarrow \infty} \int_0^{\pi} f_h(x) dx = \lim_{h \rightarrow \infty} \int_0^{\pi} \sum_{n=1}^{h} \frac{|\sin(nx)|}{2^n} dx = \lim_{h \rightarrow \infty} \sum_{n=1}^h \frac{1}{2^n} \int_0^{\pi} |\sin(nx)| dx.$$
+Now we have to compute the integral. We know that
+$$\int_0^{\infty} |\sin(y)| dy = n \int_0^{\pi} \sin(y) dy$$
+so that
+$$\int_0^{\pi} |\sin(nx)| dx = \int_0^{n \pi} |sin y| \frac{dy}{n} = \int_0^{\pi} \sin y dy = [-\cos y]_0^{\pi} = 2.$$
+Then
+$$\int_0^{\pi} f(x) dx = \sum_{k=1}^{\infty} (\frac{1}{2})^k 2 = \sum_{k=1}^{\infty} \frac{2}{2^k} = 2.$$
+Then
+$$\int_0^{\pi} f(x) dx = 2.$$ 
 \chapter{$L^p$ Spaces}
 \section*{Exercise $1$}
 Analyze the convergence in $L^p([0, 1])$ with $1 \leq p < \infty$ of
@@ -181,7 +319,7 @@ we have that for $p \in [1, 4) \qquad f_n(x) \in L^p([0, 1]) \qquad \forall n \i
 \item $f_n \in L^2([0, 1])$;
 \item $f_n \in L^3([0, 1])$.
 \end{itemize}
-\textbf{Punctual Convergence}:
+\textbf{Pointwise Convergence}:
 $$\lim_{n \rightarrow +\infty} f_n(x) = \lim_{n \rightarrow +\infty} \frac{\cos(nx)}{\sqrt[4]{x}} e^{-nx} = \lim_{n \rightarrow +\infty} \frac{\cos(nx)}{\sqrt[4]{x} e^{nx}} \rightarrow 0$$
 so
 $$f_n \rightarrow 0 \qquad \textrm{pointwise} \qquad \forall x \in [0,1],$$

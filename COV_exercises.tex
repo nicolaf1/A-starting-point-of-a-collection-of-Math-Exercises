@@ -1,0 +1,82 @@
+% book of calculus of variations exercises
+% nicola frosi
+% starting date 18-05-2024
+
+\documentclass[a4paper, twoside, openany]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage[margin=2.5 cm]{geometry}
+
+\usepackage{float}
+\usepackage{rotating}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, quotes}
+
+\title{\textbf{\huge{\textit{A collection of Calculus of Variations exercises}}}}
+
+\begin{document}
+\maketitle
+\chapter{Scalar Case}
+\section*{Exercise $1$}
+Let
+$$I[u] = \int_a^b 2 u'(x)^3 dx.$$
+Find a certain function $u: [a, b] \rightarrow \infty$ that is a minimum of the given integral functional. 
+\section*{Solution}
+$$F(x, u(x), u'(x)) = F(u'(x)) = 2 u'(x)^3.$$
+We can rewrite the integrand as
+$$F(u'(x)) = F(p) = 2 p^3$$
+From the Euler-Lagrange equations:
+$$\frac{d}{dx}\frac{\partial F}{\partial u'} (u'(x)) = \frac{\partial F}{\partial p}(p) = \frac{\partial F}{\partial u}(p)$$
+we have
+$$\frac{d}{dx}\frac{\partial F}{\partial p} (p) = 0.$$
+Since
+$$\frac{\partial F}{\partial p} (p) = \frac{\partial (2 p^3)}{\partial p} = 6 p^2 = 6 u'(x)^2$$
+then
+$$\frac{d}{dx}\frac{\partial F}{\partial u'}(u'(x)) = 12 u'(x) u''(x).$$
+We obtain an ordinary differential equation of the second order
+$$12 u'(x) u''(x) = 0$$
+$$u'(x) = C_1$$
+$$u(x) = C_2 x.$$
+We now assume $a = 1$ and $b = 10$.
+$$\begin{cases}
+	u(x) = C_2 x \\
+	u'(x) = C_1 \\
+	u(1) = 2 \\
+	u'(10) = 4
+\end{cases}$$
+$$C_1 = 4$$
+$$C_2 = 2$$
+$$u(x) = 2 x$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-0.5,0)--(13.0,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,22.5)  node[left]{$y$};
+\draw[dashed] (1.0,-1.5)--(1.0,22.5);
+\draw[dashed] (10.0,-1.5)--(10.0,22.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(1.0,0) node[below right]{$1.0$};
+\path
+(10.0,0) node[below left]{$10.0$};
+\path
+(10.0,5.0) node[below right]{$u(x)$};
+\foreach \i in {0,0.5, 1.0,...,12.0} \draw (\i,-0.05)--(\i,0.05);
+\draw[red, domain=1.:10., samples=100, variable=\x] plot ({\x}, {2.*\x});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\clearpage
+
+\end{document}
