@@ -1,2 +1,2 @@
-A starting point of a collection of Functional Analysis Exercises.
+A starting point of a collection of Math Exercises.
 
