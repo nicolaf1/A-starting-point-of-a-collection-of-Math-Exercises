@@ -578,4 +578,82 @@ $$\star = \frac{1}{\pi}\int_{-\pi}^{\pi} \frac{1 - \cos(6 x)}{2} dx - \frac{1}{\
 $$= \frac{1}{2 \pi}[x]_{-\pi}^{\pi} - \frac{1}{12 \pi}[\sin(n x)]_{-\pi}^{\pi} - \frac{1}{8 \pi}[x]_{-\pi}^{\pi} + \frac{1}{96 \pi}[\sin(12 x)]_{-\pi}^{\pi} = \frac{3}{4}.$$
 Then
 $$\alpha_3 = 1 \qquad b_3 = \frac{3}{4} \neq 1^3.$$
+\clearpage
+\section*{Exercise $17$}
+Let $f \in C^1(\mathbb{R}^2, \mathbb{R})^2$ such that $f(3, 6) = (0, 0)$. In a neighborhood of $(3, 1)$, which of the following statements are certainly true?
+\begin{enumerate}
+\item $\exists \alpha \in \mathbb{R}$ such that $x \mapsto x + \alpha f(x)$ satisfies the hypotheses of the Implicit Function Theorem.
+\item $\forall \alpha \in \mathbb{R} \qquad x \mapsto x + \alpha f(x)$ satisfies the hypotheses of the Inverse Function Theorem.
+\end{enumerate}
+\section*{Solution}
+\textbf{Point $1$} \par 
+We need to show that the derivative of $f$ in $(3, 1)$ is an invertible matrix. Counterexample: let $\alpha = 0$ and consider a function $g(x) = x \mapsto x$. Let
+$$g(x_1, x_2) = (x_1, x_2)$$
+$$Dg(x_1, x_2) = \begin{bmatrix}
+					1 & 0 \\
+					0 & \
+				 \end{bmatrix}$$
+The determinant $\det Dg = 1 \neq 0$. Then the gradient matrix is invertible
+and since it is constant it is also invertible in $(3, 1)$. So the first statement is true. \par  
+\textbf{Point $2$} \par   
+Counterexample. We need to find a function $f$ with two variables such that $Df = 0$, starting from a function $g$ not invertible. Consider
+$$g(x_1, x_2) = \begin{bmatrix}
+					3 \\
+					1
+                \end{bmatrix}$$
+with $\alpha = 1$, we have
+$$Dg(x_1, x_2) = \begin{bmatrix}
+					0 & 0 \\
+					0 & 0
+				\end{bmatrix}$$
+The gradient matrix $Dg$ is not invertible and it doesn't satisfy the Inverse Function Theorem hypotheses.
+$$\begin{bmatrix}
+	3 \\
+	1
+\end{bmatrix} = \begin{bmatrix}
+					x + f_1(x) \\
+					y + f_2(y)
+				\end{bmatrix}$$
+$$f_1(x, y) = 3 - x$$
+$$f_2(x, y) = 1 - y$$
+$$f(3, 1) = \begin{bmatrix}
+				0 \\
+				0
+			\end{bmatrix}$$
+Then the second statement is false.
+\clearpage
+\section*{Exercise $18$}
+Let $f \in C^2(\mathbb{R}^2, \mathbb{R})$ such that $f(1, 2) = 0$ and consider a neighborhood of $(1, 2)$. Which of the following statements are certainly true?
+\begin{enumerate}
+\item $\forall \alpha \in \mathbb{R} \qquad x + \alpha f(x, y) + y - 3 = 0$ satisfies the Implicit Function Theorem hypotheses;
+\item $\exists \alpha \in \mathbb{R}$ such that $x + \alpha f(x, y) + y - 3 = 0$ satisfies the Implicit Function Theorem hypotheses.
+\end{enumerate}
+\section*{Solution}
+$$g(x, y) = x + \alpha f(x, y) + y - 3$$
+$$g(1, 2) = 0$$
+$$f \in C^2 \implies g \in C^2$$
+We need to verify if
+$$\frac{g}{y} (1, 2) \neq 0 ?$$
+$$\frac{g}{x} (1, 2) \neq 0 ?$$
+\textbf{Point $2$} \par 
+We take $\alpha = 0$ so that $g(x, y) = x + y - 3$. Then
+$$\frac{\partial g}{\partial y}(1, 2) = 1 \neq 0.$$
+Then the first statement is true. \par
+\textbf{Point $1$} \par  
+We need a counterexample, starting from a function $g(x, y) = x^2 + y^2$ we can consider:
+$$g(x, y) = (x - 1)^2 + (y - 2)^2$$
+so that
+$$\nabla g(1, 2) = [0, 0].$$
+We have
+$$x + \alpha f(x, y) + y - 3 = (x - 1)^2 + (y - 2)^2.$$
+We take $\alpha = 1$.
+$$x + f(x, y) + y - 3 = (x - 1)^2 + (y - 2)^2$$
+$$f(x, y) = (x - 1)^2 + (y - 2)^2 - x - y + 3$$
+$$f(1, 2) = (0, 0)$$
+and $f \in C^2$, but
+$$\nabla f(1, 2) = [0, 0]$$
+so that $f$ is not invertible. Then the second statement is not true.
+\clearpage
+
+
 \end{document}
