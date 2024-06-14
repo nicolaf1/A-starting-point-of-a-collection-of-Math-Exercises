@@ -710,5 +710,37 @@ Now we show if it is uniform in $\theta$.
 $$|\frac{\rho^{\alpha} |\cos \theta|^{\alpha} \sin^2 \theta}{\sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}}| \leq \rho^{\alpha} \frac{|\cos \theta|^{\alpha} \sin^2 \theta}{\sqrt{3 \sin^2 \theta}} = \frac{\rho^{\alpha} |\cos \theta|^{\alpha} |\sin^2 \theta|}{\sqrt{3} \sin \theta} = \rho^2 \frac{|\cos \theta|^{\alpha} |\sin \theta|}{\sqrt{3}} \leq \frac{\rho^2}{\sqrt{3}}.$$
 It is uniform in $\theta$. Then $L = 0$ uniformly in $\theta$. \par  
 Then $f$ is differentiable in the origin for $\alpha > 0$.
+\clearpage
+\section*{Exercise $20$}
+Let $A \subseteq \mathbb{R}^n$ open and $f: A \rightarrow \mathbb{R}^m$ differentiable on $A$. Show that:
+\begin{enumerate}
+\item if $A$ is convex and $\norm{Df(x)} \leq L \qquad \forall x 	in A$ then $f$ is Lip;
+\item if $f$ is Lip with constant $L$ then $\norm{Df(x)} \leq L \qquad \forall x \in A$.
+\end{enumerate}
+\section*{Solution}
+\textbf{Point $1$} \par 
+We apply the Finite Accretion Theorem. If $A$ is convex, then
+$$\forall x'', x' \in A \qquad \norm{f(x'') - f(x')} \leq \sup_{\xi \in A} \norm{Df(\xi)} \norm{x'' - x'} \leq \star$$
+since $\norm{Df(x)} \leq L$ then also the $\sup \leq L$, then
+$$\star \leq L \norm{x'' - x'}$$
+then $f$ is Lip. \par   
+\textbf{Point $2$} \par   
+Let $x \in A$ , $v \in \mathbb{R}^m$, $t \in \mathbb{R}$.
+$$\norm{f(x + tv) - f(x)} \leq L \norm{t v} = L |t| \norm{v}$$
+$$\frac{\norm{f(x + tv) - f(x)}}{t} \leq L \norm{v}.$$
+Since $f$ is differentiable and derivable, the limit exists, so passing to the limit for $t \rightarrow 0$ we obtain:
+$$\norm{Df(x) \cdot v} \leq L \norm{v}.$$
+Now we take all the vectors for norm equal to $1$:
+$$w \in \mathbb{R}^n \qquad \norm{w} = 1$$
+then
+$$\norm{Df(x) \cdot w } \leq L,$$
+if it is valid for all the previous vectors we obtain
+$$\sup_{w \in \mathbb{R}^n, \qquad \norm{w} = 1} \norm{Df(x) w} \leq L$$
+then
+$$\norm{Df(x)} \leq L.$$
+
+
+
+
 
 \end{document}
