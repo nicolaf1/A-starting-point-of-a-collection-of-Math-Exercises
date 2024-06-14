@@ -654,6 +654,61 @@ and $f \in C^2$, but
 $$\nabla f(1, 2) = [0, 0]$$
 so that $f$ is not invertible. Then the second statement is not true.
 \clearpage
-
+\section*{Exercise $19$}
+Let $f_{\alpha} : \mathbb{R}^2 \rightarrow \mathbb{R}$ given by:
+$$f_{\alpha}(x, y) = \begin{cases}
+						\frac{|x|^{\alpha} y^2}{\sqrt{4 x^2 + 3 y^2}} \qquad \textrm{if} \qquad x \neq 0 \\
+						0 \qquad \textrm{if} \qquad x = 0
+					 \end{cases}$$
+Studying with respect to $\alpha \in \mathbb{R}$ the differentiability and continuity of $f_{\alpha}$.
+\section*{Solution}
+\textbf{First: continuity} \par 
+We have problems in all the points of the $y$-axis. First we consider the points $(0, b)$ with $b \neq 0$ that is a generic point of the $y$ axis.
+$$\lim_{(x, y) \rightarrow (0, b)} \frac{|x|^{\alpha} y^2}{\sqrt{4 x^2 + 3 y^2}} = \frac{b^2}{\sqrt{3 b^2}} \lim_{(x,y) \rightarrow (0,b)} |x|^{\alpha} = \begin{cases}
++\infty \qquad \textrm{if} \qquad \alpha < 0 \\
+\frac{b^2}{\sqrt{3 b^2}} \qquad \textrm{if} \qquad \alpha = 0\\
+0 \qquad \textrm{if} \qquad \alpha > 0.
+\end{cases}$$
+Then $f$ is continous in $(0, b)$ with $b \neq 0 \qquad \forall \alpha > 0$.
+Now we consider the point $(0, 0)$.
+$$\lim_{(x, y) \rightarrow (0, 0)} \frac{|x|^{\alpha} y^2}{\sqrt{4 x^2 + 3 y^2}}$$
+in polar coordinates
+$$\lim_{\rho \rightarrow 0} \frac{\rho^{\alpha} |\cos \theta|^{\alpha} \rho^2 (\sin^2 \theta)}{\rho \sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}}$$ 
+making some additions
+$$|\rho^{\alpha + 1} \frac{|\cos \theta|^{\alpha} (\sin^2 \theta)}{\sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}}| \leq \rho^{\alpha + 1} \frac{|\cos \theta|^{\alpha} |\sin^2 \theta|}{\sqrt{3}|\sin \theta|} = \frac{\rho^{\alpha + 1}}{\sqrt{3}} |\cos \theta|^{\alpha} |\sin \theta| \leq \frac{\rho^{\alpha + 1}}{\sqrt{3}}$$
+uniformly in $\theta$. \par  
+If $\alpha > 0$ then $L = 0$ uniformly in $\theta$. \par 
+If $\alpha \leq -1$ then $L = \nexists$. \par   
+Remains the case $-1 < \alpha < 0$.
+$$\lim_{\rho \rightarrow 0} \frac{\rho^{\alpha + 1} |\cos \theta|^{\alpha} \sin^2 \theta}{\sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}} = 0$$
+this limit is equivalent to
+$$\lim_{\rho \rightarrow 0} \rho^{\alpha + 1} h(z) = 0 \qquad \forall \theta \neq \frac{\pi}{2} \quad \frac{3\pi}{2}$$
+but the limit is not uniform since it is not possible to increase the function. Then for $-1 < \alpha < 0$ the limit goes to $+\infty$. The local boundedness theorem is violated. \par 
+Then $f$ is continuous for $\alpha \geq 0$, $f$ is continuous in $(0, b)$ for $\alpha \geq 0$. \par 
+\textbf{Second: differentiability} \par 
+We consider the points $(0, b)$ with $b \neq 0$ and with $\alpha > 0$.
+$$\frac{\partial f}{\partial x} (0, b) = \lim_{t \rightarrow 0} \frac{f(t, b) + f(0, b)}{t} = \lim_{t \rightarrow 0} \frac{|t|^{\alpha} b^2}{\sqrt{4 t^2 + 3 b^2}} \frac{1}{t} = \begin{cases}
+						\nexists \qquad \textrm{if} \qquad \alpha < 1 \\
+						\nexists \qquad \textrm{if} \qquad \alpha = 1 \\
+						0 \qquad \textrm{if} \qquad \alpha > 1
+					\end{cases}$$
+$$\frac{\partial f}{\partial y}(0, b) = \lim_{t \rightarrow 0} \frac{f(0, b + t) - f(0, b)}{t} = \lim_{t \rightarrow 0} \frac{0}{t} = 0.$$
+Now we consider the case $\alpha > 1$ and show if $f$ is differentiable. For $\alpha > 1$, $\nabla f(0, 0) = [0, 0]$. 
+$$\lim_{(h, k) \rightarrow (0, 0)} \frac{f(h, b + k) - f(0, b) - \nabla f(0, b) \begin{bmatrix} h\\ k \end{bmatrix}}{\sqrt{h^2 + k^2}} = \lim_{(h, k) \rightarrow (0, 0)} \frac{|h|^{\alpha}(b + k)^2}{\sqrt{4 h^2 + 3(b + k)^2} \sqrt{h^2 + k^2}}$$
+$$=\lim_{\rho \rightarrow 0} \frac{\rho^{\alpha -1} |\cos \theta|^{\alpha} (b + \rho \sin \theta)^2}{\sqrt{4 \rho^2 \cos^2 \theta + 3 (b + \rho \sin \theta)^2}}= 0 \qquad \forall \theta.$$
+Now we show if it is uniformly.
+$$|\frac{\rho^{\alpha - 1} |\cos \theta|^{\alpha} (b + \rho \sin \theta)^2}{\sqrt{4 \rho^2 \cos^2 \theta + 3(b + \rho \sin \theta)^2}}| \leq \rho^{\alpha -1} \frac{|b + \rho \sin \theta|}{\sqrt{3}} \leq \rho^{\alpha - 1} \frac{|b| + \rho}{\sqrt{3}}.$$
+The right term doesn't depend on $theta$ so the limit is uniform in $\theta$. If $\alpha > 1$ $f$ is differentiable in $(0, b)$ with $b \neq 0$. Now we consider the case $\alpha \geq 0$ in $(0,0)$.
+$$\frac{\partial f}{\partial x}(0, 0) = \lim_{t \rightarrow 0} \frac{f(t, 0) - f(0,0)}{t} = \lim_{t \rightarrow 0}\frac{0}{t} = 0$$
+$$\frac{\partial f}{\partial y}(0, 0) = \lim_{t \rightarrow 0} \frac{f(0, t) - f(0,0)}{t} = \lim_{t \rightarrow 0}\frac{0}{t} = 0$$
+$$\lim_{(h, k) \rightarrow (0,0)} \frac{f(h, k) - f(0, 0) - \nabla f(0, 0) \begin{bmatrix} h\\ k \end{bmatrix}}{\sqrt{h^2 + k^2}} = \lim_{(h, k) \rightarrow (0,0)} \frac{f(h, k)}{\sqrt{h^2 + k^2}} = \lim_{(h, k) \rightarrow (0,0)} \frac{|h|^{\alpha} k^2}{\sqrt{4 h^2 + 3 k^2} \sqrt{h^2 + k^2}}$$
+if $\alpha = 0$ the limit is
+$$\lim_{(h, k) \rightarrow (0,0)} \frac{k^2}{\sqrt{4 h^2 + 3 k^2} \sqrt{h^2 + k^2}} = \nexists.$$
+If $\alpha > 0$ in polar coordinates:
+$$\lim_{\rho \rightarrow 0} \frac{\rho^{\alpha} |\cos \theta|^{\alpha} \rho^2 (\sin^2 \theta)}{\rho \rho \sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}} = 0 \qquad \forall \theta.$$
+Now we show if it is uniform in $\theta$.
+$$|\frac{\rho^{\alpha} |\cos \theta|^{\alpha} \sin^2 \theta}{\sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}}| \leq \rho^{\alpha} \frac{|\cos \theta|^{\alpha} \sin^2 \theta}{\sqrt{3 \sin^2 \theta}} = \frac{\rho^{\alpha} |\cos \theta|^{\alpha} |\sin^2 \theta|}{\sqrt{3} \sin \theta} = \rho^2 \frac{|\cos \theta|^{\alpha} |\sin \theta|}{\sqrt{3}} \leq \frac{\rho^2}{\sqrt{3}}.$$
+It is uniform in $\theta$. Then $L = 0$ uniformly in $\theta$. \par  
+Then $f$ is differentiable in the origin for $\alpha > 0$.
 
 \end{document}
