@@ -269,6 +269,49 @@ Then
 $$\int_0^{\pi} f(x) dx = \sum_{k=1}^{\infty} (\frac{1}{2})^k 2 = \sum_{k=1}^{\infty} \frac{2}{2^k} = 2.$$
 Then
 $$\int_0^{\pi} f(x) dx = 2.$$ 
+\clearpage
+\section*{Exercise $5$}
+Compute
+$$\int_0^{+\infty} \frac{1}{\sqrt{x}} \sum_{k = 0}^{\infty} e^{-(\alpha^n)\sqrt{x}} dx$$
+as $\alpha \geq 0$ varies.
+\section*{Solution}
+Consider
+$$\sum_{k = 0}^{\infty} e^{l(\alpha)^k \sqrt{x}},$$
+it is a series with positive terms, then it converges or positively diverges, that is well defined. If we consider its truncated
+$$\sum_{k = 0}^n e^{-(\alpha^k) \sqrt{x}}$$
+we can construct the functions
+$$f_{\alpha, n} (x) = \sum_{k = 0}^n e^{-(\alpha^k)\sqrt{x}}.$$
+This is a sequence of functions $f_n \geq 0$ with
+$$0 \leq f_n \leq f_{n+1} \qquad \forall n \in \mathbb{N},$$
+then it is monotone. We can use the Beppo Levi Theorem:
+$$\int_0^{+infty} \frac{1}{\sqrt{x}} \sum_{k = 0}^{+\infty} e^{-(\alpha^k)\sqrt{x}} dx = \int_0^{+\infty} \frac{1}{\sqrt{x}} \lim_{n \rightarrow \infty} \sum_{k = 0}^n e^{-(\alpha^k)\sqrt{x}} dx = \star$$
+now we can apply Beppo Levi Theorem
+$$\star = \lim_{n \rightarrow \infty} \sum_{k = 0}^n \int_0^{+\infty} \frac{e^{-(\alpha^k)\sqrt{x}}}{\sqrt{x}} dx = \star$$
+now we can make a change of variables,
+$$y = \sqrt{x}$$
+$$dy = \frac{1}{2} \frac{1}{y} dx$$
+$$dx = 2 y dy$$
+$$\star = \lim_{n \rightarrow \infty} \sum_{k = 0}^n \int_0^{\infty} \frac{e^{-(\alpha^k) y}}{y} 2 y dy = \lim_{n \rightarrow \infty} \sum_{k = 0}^{\infty} 2 \int_0^{\infty} e^{-(\alpha^k) y} dy$$
+Now we have that
+$$[e^{-(\alpha^k)y}]' = -(\alpha^k) e^{-(\alpha^k)y}$$
+then
+$$\lim_{n \rightarrow \infty} \sum_{k = 0}^n 2 \frac{1}{(-\alpha^k)} \int_0^{\infty} -(\alpha^k)e^{-(\alpha^k)y} dy = \lim_{n \rightarrow \infty} \sum_{k=0}^n 2 \frac{1}{-(\alpha^k)}\int_0^{\infty} [e^{-(\alpha^k)y}]'$$
+$$ = \sum_{k = 0}^{+\infty} \frac{2}{-\alpha^k} (\lim_{c \rightarrow \infty} [e^{-(\alpha^k)y}]_0^c) = \sum_{k=0}^{\infty} \frac{2}{\alpha^k} = 2 \sum_{k=0}^{\infty}(\frac{1}{\alpha})^k= \star$$
+this is a geometric series, then
+$$\star = 2 \begin{cases}
+				+\infty \qquad \textrm{if} \qquad \frac{1}{\alpha} \geq 1 \\
+				\frac{1}{1 - \frac{1}{\alpha}} \qquad \textrm{if} \qquad |\frac{1}{\alpha}| < 1 \\
+				\textrm{indet.} \qquad \textrm{if} \qquad \frac{1}{\alpha} \leq -1.
+			\end{cases}$$
+But we have that $\alpha \geq 0$, then
+$$\int_0^{\infty} \frac{1}{\sqrt{x}} \sum_{k=0}^{\infty} e^{-(\alpha^k)\sqrt{x}} dx = \begin{cases}
+		\frac{2 \alpha}{\alpha - 1} \qquad \textrm{if} \qquad \frac{1}{\alpha} \in (0, 1) \\
+		\infty \qquad \textrm{if} \qquad \frac{1}{\alpha} \geq 1	 
+	 \end{cases} = \begin{cases}
+		\frac{2 \alpha}{\alpha - 1} \qquad \textrm{if} \qquad \alpha > 1 \\
+		\infty \qquad \textrm{if} \qquad \alpha \in (0, 1].	 
+	 \end{cases}$$
+\clearpage
 \chapter{$L^p$ Spaces}
 \section*{Exercise $1$}
 Analyze the convergence in $L^p([0, 1])$ with $1 \leq p < \infty$ of
