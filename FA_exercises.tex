@@ -22,8 +22,33 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, calc, quotes}
 
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\grd}{\nabla}
+\newcommand\dvg{\operatorname{div}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\adj}{\operatorname{adj}}
+\newcommand{\cof}{\operatorname{Cof}}
+\newcommand{\tr}{\operatorname{tr}}
 \newcommand{\esssup}{\operatornamewithlimits{ess\,sup}}
+\newcommand{\essinf}{\operatornamewithlimits{ess\,inf}}
+\newcommand{\lam}{\lambda}
+\renewcommand{\th}{\vartheta}
+\newcommand{\Om}{\varOmega}
+\renewcommand{\Gamma}{\varGamma}
+\newcommand{\om}{\omega}
+\newcommand{\bt}{\textbf}
+\newcommand{\mt}{\mathbf}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\we}{\wedge}
+
+
+
 
 \title{\textbf{\huge{\textit{A collection of Functional Analysis exercises}}}}
 
@@ -415,7 +440,270 @@ Since $[0, 1]$ is a bounded set we have the following embeddings:
 \end{center}
 \end{figure}							
 The sequence $f_n(x)$ lives in "green" spaces.
-
+\clearpage
+\section*{Exercise $2$}
+Let $f \in L^{\infty}([0, +\infty))$ and suppose it is a monotone non-increasing function (weakly decreasing). Let $f \geq 0$.Show that
+$$x = f(x) \rightarrow 0 \qquad \textrm{for} \qquad x \rightarrow + \infty.$$
+\section*{Solution}
+$f$ is weakly decreasing or monotone non-increasing and it is positive. Then
+$$\forall x_1 \leq x_2 \implies f(x_2) \leq f(x_1),$$
+furthemore it is positive, then
+$$\lim_{x \rightarrow +\infty} f(x) = l$$
+that is
+$$\lim_{x \rightarrow +\infty} f(x) = l = \inf \{ f(x) \qquad \textrm{s.t.} \qquad x \in dom f, \qquad x > l \}$$
+$$f \in L^1([0, +\infty)) \implies l = 0$$
+$f \in L^1([0, +\infty))$ means that $\int_0^{+\infty} |f| dx < +\infty$. If it were $l \neq 0$  we would have
+$$f \neq L^1([0, +\infty))$$
+since
+$$\int_0^{+\infty} |f| dx \rightarrow +\infty.$$
+If $f \in L^1([0, +\infty))$ it must be $l = 0$. We now need to show that the product $x \cdot f(x) \rightarrow 0$ for $x \rightarrow + \infty$. We have
+$$\int_0^{+\infty} f(t) dt = \int_0^{+\infty} f(t) \chi_{[t > x]} dt$$
+We have that for $x \rightarrow +\infty \implies \chi_{[t > x]} \rightarrow 0$, in fact:
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+\draw[->] (-2.0,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,2.5)  node[left]{$y$};
+\draw[dashed] (1.5,0.0)--(1.5,1.0);
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.5,0) node[below left]{$x$};
+\path
+(2.5,1.5) node[below left]{$\chi_{[t > x]}$};
+\draw[blue, line width = 1.5, domain=-2.:1.5, samples=100, variable=\x] plot ({\x}, {0});
+\draw[blue, line width = 1.5, domain=1.5:3.5, samples=100, variable=\x] plot ({\x}, {1});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+for $x \rightarrow + \infty$ it becomes
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+\draw[->] (-2.0,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,2.5)  node[left]{$y$};
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.5,0) node[below left]{$x$};
+\path
+(2.5,1.5) node[below left]{$\chi_{[t > x]}$};
+\draw[blue, line width = 1.5, domain=-2.:3.5, samples=100, variable=\x] plot ({\x}, {0});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+Now we search the domination for $f(t) \chi_{[t > x]}(t)$, beacouse we want to apply the Dominated Convergence Theorem.
+$$f(t) \chi_{[t > x]} \leq |f(t)| \qquad \textrm{with} \qquad f \in L^1([0, +\infty))$$
+$$\textrm{for} \qquad x \rightarrow +\infty \qquad \textrm{we have}$$
+$$f(t) \chi_{[t > x]} \rightarrow 0 \qquad \textrm{a.e.} \mu$$
+This function is dominate by $|f(t)|$ that is a $L^1$ function. Then we can apply the Dominated Convergence Theorem.
+$$\lim_{t \rightarrow +\infty} \int_0^{+\infty} f(t) dt = \int_0^{+\infty} \lim_{t \rightarrow +\infty} f(t) dt = 0$$
+$$\forall \epsilon > 0 \qquad \exists x_{\epsilon} > 0 \qquad \textrm{s.t.} \qquad \int_{x_{\epsilon}}^{+\infty} f(x) < \epsilon.$$
+Now we take $x \geq x_{\epsilon}$, we have
+$$x f(x) = x_{\epsilon} f(x) + x f(x) - x_{\epsilon} f(x) = x_{\epsilon} f(x) + f(x) \int_{x_{\epsilon}}^x 1 dt \leq \star$$
+since it is weakly decreasing we can put $f$ inside the integral
+$$\star \leq x_{\epsilon} f(x) + \int_{x_{\epsilon}}^x f(t) dt \leq \star$$
+since $f$ is positive then we can integrate between $x_{\epsilon}$ and $+\infty$
+$$\star \leq x_{\epsilon} f(x) + \int_{x_{\epsilon}}^{+\infty} f(t) dt.$$
+Now we can pass to the limit for $x \rightarrow +\infty$ and we obtain
+$$x f(x) \leq x_{\epsilon} f(x) + \int_{x_{\epsilon}}^{+\infty} f(t) dt \leq \epsilon$$
+$$\textrm{for} \qquad x \rightarrow +\infty \qquad xf(x) \leq \epsilon \qquad \forall \epsilon >0$$
+then for $x \rightarrow +\infty$, $xf(x) \rightarrow 0$.
+\clearpage
+\section*{Exercise $3$}
+Find $f \in (L^1(\mathbb{R}) \cap L_{loc}^{\infty}(\mathbb{R}) \setminus L^2(\mathbb{R})$ and $g \in (L^2(\mathbb{R}) \cap L^{\infty}(\mathbb{R})) \setminus L^1(\mathbb{R})$.
+\section*{Solution}
+We want to find a function $f$  that belongs to $(L^1(\mathbb{R}) \cap L_{loc}^{\infty}(\mathbb{R}) \setminus L^2(\mathbb{R})$. \par  
+First of all we can construct a function that is in $L^1(\mathbb{R})$ and that is locally bounded (essentially bounded), but that is not in $L^2(\mathbb{R})$. \par 
+Generally when think to the term "local" we mean "restricted to a compact set". \par 
+We can think to the following function:
+$$f(x) = \sum_{k = 1}^{\infty} k \chi_{[k, k + \frac{1}{k^3}]} (x) \qquad x \in \mathbb{R}$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+\draw[->] (-2.0,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,3.5)  node[left]{$y$};
+\draw[dashed] (1.,0.0)--(1.,1.0);
+\draw[dashed] (2.,0.0)--(2.,2.0);
+\draw[dashed] (17.0/8,0.0)--(17.0/8,2.0);
+\draw[dashed] (3.,0.0)--(3.,3.0);
+\draw[dashed] (83./27,0.0)--(83./27,3.0);
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\path
+(2.0,0) node[below left]{$2.0$};
+\path
+(3.0,0) node[below left]{$3.0$};
+\path
+(0,1.0) node[below left]{$1.0$};
+\path
+(0.0,2.0) node[below left]{$2.0$};
+\path
+(0.0,3.0) node[below left]{$3.0$};
+\path
+(2.0,2.5) node[below left]{$f(x)$};
+\foreach \i in {0,1.0, 2.0,...,3.0} \draw (\i,-0.02)--(\i,0.02);
+\foreach \i in {0,1.0, 2.0,...,3.0} \draw (-0.02,\i)--(0.02,\i);
+\draw[blue, line width = 1.5, domain=-2.:1.0, samples=100, variable=\x] plot ({\x}, {0});
+\draw[blue, line width = 1.5, domain=1.0:2.0, samples=100, variable=\x] plot ({\x}, {1});
+\draw[blue, line width = 1.5, domain=2.0:17.0/8, samples=100, variable=\x] plot ({\x}, {2});
+\draw[blue, line width = 1.5, domain=17.0/8:3, samples=100, variable=\x] plot ({\x}, {0});
+\draw[blue, line width = 1.5, domain=3.0:83./27, samples=100, variable=\x] plot ({\x}, {3});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+$$f(x) = \chi_{[1, 2]} + 2 \chi_{[2, \frac{17}{8}]} + 3 \chi_{[3,\frac{82}{27}]} + \cdots$$
+This function is surely in $L_{loc}^{\infty}(\mathbb{R})$. In fact $\forall a > 0 \exists k_a$ maximal such that $k_a \leq a$. Then
+$$f \in L_{loc}^{\infty}.$$
+\vspace{1.5 cm}
+We know that
+$$\sup_{a \in A} f = k_a,$$
+since the  rung at the $k$-th step is $k$ high. The norm $L^1$ is given by the sum of the area of each rectangle. Then
+$$\norm{f}_{L^1(\mathbb{R})} = \int_{\mathbb{R}} |f| dx < +\infty,$$
+$$\frac{1}{k^3} \rightarrow 0 \qquad \textrm{for} \qquad k \rightarrow +\infty.$$
+\vspace{1.5 cm}
+Now we want to show that $f \notin L^2(\mathbb{R})$. We consider the truncated
+$$f_n = \sum_{k = 1}^n k \chi_{k, k + \frac{1}{k^3}} (x),$$
+and make all the calculus. Trivially $f_n \geq 0$, then we have a series with positive terms. Furthermore $f_n$ is monotone since
+$$0 \leq f_n \leq f_{n + 1}.$$
+We can apply the Beppo Levi Theorem (or the Monotone Convergence Theorem).
+$$\norm{f}_{L^1(\mathbb{R})} = \int_{\mathbb{R}} |f| dx = \int_{\mathbb{R}} \lim_{n \rightarrow +\infty} \sum_{k = 1}^n k \chi_{[k, k + \frac{1}{k^3}]}(x) dx = \star$$
+we now apply the Beppo Levi Theorem
+$$\star = \sum_{k=1}^{\infty} \int_{\mathbb{R}} k \chi_{[k, k + \frac{1}{k^3}]}(x) dx = \sum_{k = 1}^{\infty} k \int_{\mathbb{R}} \chi_{[k, k + \frac{1}{k^3}]} (x) dx = \sum_{k=1}^{\infty} k [x]_k^{k +  \frac{1}{k^3}} = \sum_{k=1}^{\infty} k (k + \frac{1}{k^3} - k) = \sum_{k=1}^{\infty} \frac{1}{k^2} < +\infty$$
+this is a generalized harmonic series
+$$\sum_{n=1}^{\infty} \frac{1}{n^{\lambda}} = \begin{cases}
+												\textrm{divergent} \qquad \textrm{if} \qquad \lambda \leq 1 \\
+												\textrm{convergent} \qquad \textrm{if} \qquad \lambda > 1
+											 \end{cases}$$
+Then we have that
+$$\norm{f}_{L^1(\mathbb{R})} < +\infty \implies f \in L^1(\mathbb{R}).$$			This shows us that we can have a function that is locally bounded ($L_{loc}^{\infty}(\mathbb{R})$) and that is also summable on $\mathbb{R}$, ($L^1(\mathbb{R})$).	Now we show that $f \notin L^2(\mathbb{R})$. We have that
+$$f \in L^2(\mathbb{R}) \iff (\int_{\mathbb{R}} |f|^2 dx)^{\frac{1}{2}} = \norm{f}_{L^2(\mathbb{R})} < +\infty.$$
+\vspace{1.5 cm}
+We still apply the Beppo Levi Theorem.
+$$f_n^2(x) = \sum_{k=1}^n k^2 \chi_{[k,k + \frac{1}{k^3}]} (x) \qquad f_n^2 \geq 0 \qquad 0 \leq f_n^2 \leq f_{n+1}^2$$
+$$\norm{f_n}_{L^2(\mathbb{R})}^2 = \int_{\mathbb{R}} |f(x)|^2 = \lim_{n \rightarrow +\infty} \int_{\mathbb{R}} \sum_{k=1}^n k^2 \chi_{[k, k + \frac{1}{k^3}]} (x) dx = star$$
+\vspace{1.5 cm}
+we apply the Beppo Levi Theorem
+$$\star = \int_{\mathbb{R}} \sum_{k=1}^{\infty} k^2 \chi{[k, k + \frac{1}{k^3}]} (x) dx = \sum_{k = 1}^{\infty} k^2 \int_{\mathbb{R}} \chi_{[k, k + \frac{1}{k^3}]} (x) dx = \sum_{k = 1}^{\infty} k^2 [x]_k^{k + \frac{1}{k^3}} = \sum_{k=1}^{\infty} \frac{1}{k} \rightarrow +\infty,$$
+since it is a harmonic series:
+$$\sum_{n=1}^{\infty} \frac{1}{n} \rightarrow +\infty$$
+that diverges positively. Then
+$$f \notin L^2(\mathbb{R}).$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\draw[->] (-2.0,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,9.5)  node[left]{$y$};
+\draw[dashed] (1.,0.0)--(1.,1.0);
+\draw[dashed] (2.,0.0)--(2.,4.0);
+\draw[dashed] (17.0/8,0.0)--(17.0/8,4.0);
+\draw[dashed] (3.,0.0)--(3.,9.0);
+\draw[dashed] (83./27,0.0)--(83./27,9.0);
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\path
+(2.0,0) node[below left]{$2.0$};
+\path
+(3.0,0) node[below left]{$3.0$};
+\path
+(0,1.0) node[below left]{$1.0$};
+\path
+(0.0,2.0) node[below left]{$2.0$};
+\path
+(0.0,3.0) node[below left]{$3.0$};
+\path
+(0.0,4.0) node[below left]{$4.0$};
+\path
+(0.0,5.0) node[below left]{$5.0$};
+\path
+(0.0,6.0) node[below left]{$6.0$};
+\path
+(0.0,7.0) node[below left]{$7.0$};
+\path
+(0.0,8.0) node[below left]{$8.0$};
+\path
+(0.0,9.0) node[below left]{$9.0$};
+\path
+(1.0,2.5) node[below left, text=blue]{$f_n(x)$};
+\path
+(1.0,4.5) node[below left, text=red]{$f_n^2(x)$};
+\foreach \i in {0,1.0, 2.0,...,3.0} \draw (\i,-0.02)--(\i,0.02);
+\foreach \i in {0,1.0, 2.0,...,9.0} \draw (-0.02,\i)--(0.02,\i);
+\draw[blue, line width = 1.5, domain=-2.:1.0, samples=100, variable=\x] plot ({\x}, {0});
+\draw[blue, line width = 1.5, domain=1.0:2.0, samples=100, variable=\x] plot ({\x}, {1});
+\draw[blue, line width = 1.5, domain=2.0:17.0/8, samples=100, variable=\x] plot ({\x}, {2});
+\draw[red, line width = 1.5, domain=2.0:17.0/8, samples=100, variable=\x] plot ({\x}, {4});
+\draw[blue, line width = 1.5, domain=17.0/8:3, samples=100, variable=\x] plot ({\x}, {0});
+\draw[blue, line width = 1.5, domain=3.0:83./27, samples=100, variable=\x] plot ({\x}, {3});
+\draw[red, line width = 1.5, domain=3.0:83./27, samples=100, variable=\x] plot ({\x}, {9});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+We have found a function
+$$f(x) = \sum_{k=1}^{\infty} k \chi_{[k, k + \frac{1}{k^3}]} (x)$$ such that
+$$f \in (L^1(\mathbb{R}) \cap L_{loc}^{\infty}(\mathbb{R})) \setminus L^2(\mathbb{R}).$$ 
+\clearpage
+Now we want to find a function 
+$$g \in (L^2(\mathbb{R}) \cap L^{\infty}(\mathbb{R})) \setminus L^1(\mathbb{R}).$$
+We consider a function
+$$g(x) = \begin{cases}
+			1 \qquad \textrm{if} \qquad |x| \leq 1 \\
+			\frac{1}{|x|} \qquad \textrm{if} \qquad |x| > 1
+		 \end{cases}$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+\draw[->] (-3.5,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,1.5)  node[left]{$y$};
+\draw[dashed] (-1.,-0.5)--(-1.,1.5);
+\draw[dashed] (1.,-0.5)--(1.,1.5);
+\path
+(0,0) node[below left]{$0$};
+\path
+(0.5,0) node[below left]{$0.5$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\path
+(-1.0,0) node[below left]{$-1.0$};
+\path
+(1.0,1.5) node[below left, text=blue]{$g(x)$};
+\foreach \i in {-3., -2., -1., 0,1.0, 2.0,...,3.0} \draw (\i,-0.02)--(\i,0.02);
+\foreach \i in {0,1.0} \draw (-0.02,\i)--(0.02,\i);
+\draw[blue, line width = 1.5, domain=-3.:-1.0, samples=100, variable=\x] plot ({\x}, {-1./\x});
+\draw[blue, line width = 1.5, domain=-1.0:1.0, samples=100, variable=\x] plot ({\x}, {1});
+\draw[blue, line width = 1.5, domain=1.:3., samples=100, variable=\x] plot ({\x}, {1/\x});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+$g$ is certainly bounded since
+$$\esssup_{\R} g(x) = \sup_{\R} g(x) = 1$$
+then
+$$g \in L^{\infty}(\R).$$
+Now we show that $g \notin L^1(\R)$, in fact
+$$\norm{g}_{L^1(\R)} = \int_{\R} |g(x)| dx = \int_{-\infty}^{+\infty} g(x) dx = \int_{-1}^1 g(x) dx  + \int_{|x| > 1} \frac{1}{|x|} dx,$$
+the first integral,
+$$\int_{-1}^1 1 dx = [x]_{-1}^1 = 2,$$
+the second integral
+$$\int_{-\infty}^{-1} -\frac{1}{x} dx + \int_1^{+\infty} \frac{1}{x} \rightarrow + \infty.$$
+Then
+$$g \notin L^1(\R).$$
+Finally we show that $g \in L^2(\R)$.
+$$\norm{g(x)}_{L^2(\R)}^2 = \int_{-\infty}^{+\infty} g(x)^2 dx = \int_{-1}^1 g(x)^2 dx + \int_{|x| > 1} \frac{1}{|x|^2} dx = \int_{-1}^1 1 dx + \int_{-\infty}^{-1} \frac{1}{(-x)^2} dx  + \int_1^{+\infty} \frac{1}{x^2} dx < +\infty,$$
+since the generalized harmonic series. Then
+$$g \in L^2(\R).$$
+We have found a function $g \in (L^2(\R) \cap L^{\infty}(\R)) \setminus L^1(\R)$.
 \chapter{Hilbert Spaces}
 \section*{Exercise $1$}
 Let $X = (C(0,1); \norm{ \cdot }_{\infty})$ and consider
@@ -540,7 +828,6 @@ Show that $T \in \mathcal{L}(L^2[0,1])$ and compute $\norm{T}$.
 \draw[dashed] (0.5,-1.5)--(0.5,1.5);
 \path
 (0,0) node[below left]{$0$};
-\path
 (0.5,0) node[below left]{$0.5$};
 \path
 (1.0,0) node[below left]{$1.0$};

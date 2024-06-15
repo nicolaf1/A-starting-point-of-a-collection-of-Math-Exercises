@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.7)  15 JUN 2024 12:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.7)  15 JUN 2024 16:33
 entering extended mode
  \write18 enabled.
 **FA_exercises.tex
@@ -516,20 +516,20 @@ LaTeX Warning: Label `fig: 4.3' multiply defined.
 )
 \openout1 = `FA_exercises.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -587,13 +587,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -609,12 +609,12 @@ LaTeX Warning: No \author given.
 Chapter 1.
 Missing character: There is no ù in font nullfont!
 
-Overfull \hbox (12.07954pt too wide) in paragraph at lines 66--67
+Overfull \hbox (12.07954pt too wide) in paragraph at lines 91--92
  [] 
  []
 
 
-Overfull \hbox (6.39128pt too wide) in paragraph at lines 88--89
+Overfull \hbox (6.39128pt too wide) in paragraph at lines 113--114
  [] 
  []
 
@@ -623,14 +623,14 @@ Overfull \hbox (6.39128pt too wide) in paragraph at lines 88--89
 ]
 Missing character: There is no ù in font nullfont!
 
-Overfull \hbox (12.07954pt too wide) in paragraph at lines 116--117
+Overfull \hbox (12.07954pt too wide) in paragraph at lines 141--142
  [] 
  []
 
 [3] [4
 
 ] [5] [6]
-Overfull \hbox (25.08676pt too wide) detected at line 263
+Overfull \hbox (25.08676pt too wide) detected at line 288
 [][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML
 /cmm/m/it/10 dx \OT1/cmr/m/n/10 = [][] [] \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (
 \OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [] [][
@@ -651,36 +651,80 @@ Chapter 2.
 
 ] [11]
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 400.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 425.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 402.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 427.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 404.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 429.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 406.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 431.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 408.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 433.
 
 
-LaTeX Font Warning: Command \huge invalid in math mode on input line 413.
+LaTeX Font Warning: Command \huge invalid in math mode on input line 438.
 
 Missing character: There is no ; in font nullfont!
-[12]
-Chapter 3.
-[13
+[12] [13
 
 ] [14] [15
 
+] [16] [17]
+Overfull \hbox (49.06865pt too wide) in paragraph at lines 687--688
+ [] 
+ []
+
+
+Overfull \hbox (5.56352pt too wide) detected at line 703
+[][] \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
+ x\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/1
+0 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 dx \O
+T1/cmr/m/n/10 + [][] []\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [][] 1\OML/cmm/m/i
+t/10 dx \OT1/cmr/m/n/10 + [][] []\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 + [][] []\
+OML/cmm/m/it/10 dx < \OT1/cmr/m/n/10 +\OMS/cmsy/m/n/10 1\OML/cmm/m/it/10 ;
+ []
+
+[18
+
+]
+Chapter 3.
+[19
+
+] [20] [21
+
 ]
 Chapter 4.
-[16
+Missing character: There is no ( in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ; in font nullfont!
+[22
 
 
-] [17] [18
+] [23] [24
 
 ] (./FA_exercises.aux)
 
@@ -688,10 +732,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22999 strings out of 480204
- 462986 string characters out of 5895011
- 704866 words of memory out of 5000000
- 40667 multiletter control sequences out of 15000+600000
+ 23458 strings out of 480204
+ 472211 string characters out of 5895011
+ 704984 words of memory out of 5000000
+ 41126 multiletter control sequences out of 15000+600000
  492891 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  84i,9n,89p,435b,762s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -718,10 +762,10 @@ c/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msbm7.pfb>
-Output written on FA_exercises.pdf (18 pages, 291143 bytes).
+Output written on FA_exercises.pdf (24 pages, 321854 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
+ 374 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
