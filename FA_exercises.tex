@@ -807,6 +807,47 @@ $$\nexists f \in K \qquad \textrm{s.t.} \qquad d = \norm{f}_{\infty} = 1,$$
 $$d = d(0, K)$$
 $$0 \notin K.$$
 \clearpage
+\section*{Exercise $2$}
+Let $X$ a Hilbert space, $C_1 \subseteq C_2 \subseteq H$, convex, closed and non empty. Show that
+$$\norm{P_{C_1}(x) - P_{C_2}(x)}^2 \leq 2(d(x, C_1)^2 - d(x, C_2)^2) \qquad \forall x \in X.$$
+\section*{Solution}
+The starting point is the parallelogram idenity:
+$$\norm{x - y}^2 + \norm{x + y}^2 = 2 \norm{x}^2 + 2 \norm{y}^2 \qquad \forall x, y \in X.$$
+We consider
+$$u = x - P_{C_1}(x),$$
+$$v = x - P_{C_2}(x).$$
+Now we apply the parallogram rule to $u$ and $v$, then
+$$\norm{u - v}^2 + \norm{u + v}^2 = 2 \norm{u}^2 + 2 \norm{v}^2,$$
+so that
+$$\norm{x - P_{C_1}(x) - x + P_{C_2}(x)}^2 + \norm{x - P_{C_1}(x) +x - P_{C_2}(x)}^2 = 2 \norm{x - P_{C_1}(x)}^2 + 2 \norm{x - P_{C_2}}^2,$$
+then
+$$\norm{2x - P_{C_1}(x) - P_{C_2}(x)}^2 + \norm{P_{C_2}(x) - P_{C_1}(x)}^2 = 2(\norm{x - P_{C_1}(x)}^2 + \norm{x + P_{C_2}}^2) = 2(d(x, C_1)^2 + d(x, C_2)^2)$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.0]
+\path
+(2.2,2) node[below left, text=black]{$H$};
+\path
+(2.8,3.5) node[below left, text=blue]{$C_2$};
+\path
+(3.2,3) node[below left, text=orange]{$C_1$};
+\draw [black, line width = 1.5]  plot[smooth, tension=.7] coordinates {(2,5.5) (3,6) (4,5.8) (5.2,5.5) (5.5,4.5) (6.5,3) (6,1)(4.5,0.5) (2,1) (2.5,2.5) (1,4) (2,5.5)}; 
+\draw[blue, line width = 1.5] (4.3 ,3) circle({sqrt(2)});
+\draw[orange, line width = 1.5] (4.3 ,3) circle({sqrt(1)});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+From the definition
+$$d(x, C_1) = \inf \{ d(x, y) \qquad \textrm{s.t.} \qquad y \in C_1 \}$$
+we have
+$$4 \norm{x - \frac{P_{C_1}(x) + P_{C_2}(x)}{2}}^2 + \norm{P_{C_2}(x) - P_{C_1}(x)}^2 = 2(d(x, C_1)^2 + d(x, C_2)^2).$$
+$C_1 \subseteq C_2$ are convex, then
+$$\frac{P_{C_1}(x) + P_{C_2}(x)}{2} \in C_2,$$
+then
+$$\norm{x - (\frac{P_{C_1}(x) + P_{C_2}(x)}{2})}^2 \geq d(x, C_2)^2,$$
+from which finally we obtain the desired inequality:
+$$\norm{P_{C_2}(x) - P_{C_1}(x)}^2 \leq 2(d(x, C_1)^2 - d(x, C_2)^2).$$
+\clearpage
 \chapter{Operators}
 \section*{Exercise $1$}
 Let 

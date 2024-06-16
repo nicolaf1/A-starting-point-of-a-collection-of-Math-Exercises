@@ -22,6 +22,30 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, calc, quotes}
 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\grd}{\nabla}
+\newcommand\dvg{\operatorname{div}}
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\adj}{\operatorname{adj}}
+\newcommand{\cof}{\operatorname{Cof}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\esssup}{\operatornamewithlimits{ess\,sup}}
+\newcommand{\essinf}{\operatornamewithlimits{ess\,inf}}
+\newcommand{\lam}{\lambda}
+\renewcommand{\th}{\vartheta}
+\newcommand{\Om}{\varOmega}
+\renewcommand{\Gamma}{\varGamma}
+\newcommand{\om}{\omega}
+\newcommand{\bt}{\textbf}
+\newcommand{\mt}{\mathbf}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\we}{\wedge}
+
 \title{\textbf{\huge{\textit{A collection of Calculus of Variations exercises}}}}
 
 \begin{document}
@@ -77,6 +101,168 @@ $$u(x) = 2 x$$
 \end{tikzpicture}
 \end{center}
 \end{figure}
+\clearpage
+\section*{Exercise $2$}
+Let 
+$$I[u] = \int_a^b 4x(u'(x)) + u'(x)^2 dx.$$
+Find a certain function $u: [a, b] \rightarrow \infty$ that is a minimum of the given integral functional. 
+\section*{Solution}
+We have
+$$F(x, u(x), u'(x)) = 4x (u'(x)) + u'(x)^2$$
+that can be rewritten as
+$$F(x, y, z) = 4xz + z^2.$$
+Now we can apply the Euler-Lagrange equations:
+$$\frac{d}{dx} \frac{\partial F}{\partial z}(z) = \frac{\partial F}{\partial y}(z).$$
+Since $ \frac{\partial F}{\partial y}(z) = 0$, we obtaint the following equation:
+$$\frac{d}{dx}\frac{\partial F}{\partial z}(x, z) = 0.$$
+Since 
+$$\frac{\partial F}{\partial z} = 4x + 2z,$$
+then
+$$\frac{d}{dx}\frac{\partial F}{\partial z} = 4 + 2 u''(x).$$
+Finally we obtain the following ODE:
+$$4 + 2 u''(x) = 0$$
+$$u''(x) = -2$$
+integrating
+$$u'(x) = -2x + C_1$$
+$$u(x) = -x^2 + C_1x + C_2.$$
+If we assume $a = 1$, $b = 3$ and the boundary conditions
+$$u(a) = u(1) = 1,$$
+$$u(b) = u(3) = 0,$$
+we obtain 
+$$C_1 = \frac{7}{2}$$
+$$C_2 = \frac{-3}{2}.$$
+$$u(x) = - x^2 + \frac{7}{2} x - \frac{3}{2}$$
+$$u(1) = 1$$
+$$u(3) = 0.$$ 
+$$\frac{d}{dx} u(x) = - 2x + \frac{7}{2}$$
+$$\frac{d}{dx} u(x) \geq 0$$
+for
+$$x \leq \frac{7}{4}.$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+\draw[dashed] (0.0,-1.5)--(0.0,2.5);
+\draw[->, red] (-2.0,-1.5)--(-0.2,2.2);
+\draw[->, red] (0.2,2.2)--(2.0,-1.5);
+\path
+(0.0,2.5) node[above]{$\frac{7}{4}$};
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=3.0]
+\draw[->] (-0.5,0)--(3.5,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,2.0)  node[left]{$y$};
+\draw[dashed] (1.0,-0.5)--(1.0,2.0);
+\draw[dashed] (3.0,-0.5)--(3.0,2.0);
+\path
+(0,0) node[below left]{$0$};
+\path
+(1.0,0) node[below right]{$1.0$};
+\path
+(3.0,0) node[below right]{$3.0$};
+\path
+(2.5,2.0) node[below right]{$u(x)$};
+\foreach \i in {0,0.5, 1.0,...,3.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[red, line width=1.5, domain=1.:3., samples=100, variable=\x] plot ({\x}, {-\x*\x + 7./2*\x - 3./2});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\clearpage
+\section*{Exercise $3$}
+Let $v \in C_c^{\infty}([-1, 1], \R)$ given by
+$$v(x) = e^{-\frac{1}{(1 - x^2)}}.$$
+Determine the value of 
+$$\int_a^b u(x) \cdot v'(x) dx$$
+in the case
+\begin{enumerate}
+\item $u(x) = x$;
+\item $u(x) = 1$;
+\item $u(x) = 10$.
+\end{enumerate}
+\section*{Solution}
+\textbf{ Case $1$} \par 
+$$\int_{-1}^1 u(x) v'(x) dx = \int_{-1}^1 x v'(x) dx = ?$$
+$$v'(x) = [ e^{-\frac{1}{(1 - x^2)}}]' = e^{-\frac{1}{(1 - x^2}} \cdot (\frac{- 2x }{(1 - x^2)^2}) = -\frac{2x}{(1 - x^2)^2}e^{-\frac{1}{(1 - x^2)}}.$$
+Then
+$$\int_{-1}^1 u(x) v'(x) dx = \int_{-1}^1 x(-\frac{2x}{(1 - x^2)^2} e^{-\frac{1}{(1 - x^2)}} dx = \int_{-1}^1 -\frac{2 x^2}{(1 - x^2)^2}e^{-\frac{1}{(1 - x^2)}} dx = \int_{-1}^1 x [e^{-\frac{1}{(1 - x^2)}}]' dx = \star$$
+we need an integration by parts
+$$\int f g' = fg - \int g f'$$
+$$\star = [x e^{-\frac{1}{(1 - x^2)}}]_{-1}^1 - \int_{-1}^1 e^{-\frac{1}{(1 - x^2)}} dx = \star$$
+the integral is equal to zero, then
+$$\star = (e^0 - e^0) = 2 \neq 0.$$
+\textbf{ Case $2$} \par 
+$$\int_{-1}^1 u(x) v'(x) dx = \int_{-1}^1 1 \cdot ( -\frac{2x}{(1 - x^2)^2}e^{-\frac{1}{(1 - x^2)}}) dx = \int_{-1}^1 [-\frac{2x}{(1 - x^2)^2} e^{-\frac{1}{(1 -  x^2)}} dx$$
+$$ = \int_{-1}^1 [e^{-\frac{1}{(1 - x^2)}}]' dx = [e^{-\frac{1}{(1 - x^2)}}]_{-1}^1 = (e^0 - e^0) = 1 - 1 = 0.$$
+\textbf{ Case $3$} \par 
+$$\int_{-1}^1 u(x) v'(x) dx = \int_{-1}^1 10 (-\frac{2x}{(1 -x^2} e^{-\frac{1}{(1 - x^2)}}) dx = \int_{-1}^1 10 [e^{-\frac{1}{(1 - x^2)}}]' dx = 10 [e^{-\frac{1}{(1 - x^2)}}]_{-1}^1 = 10 (e^0 - e^0) = 0.$$
+\clearpage
+\section*{Exercise $4$}
+Find, if it exists, the minimum of the following functional:
+$$I[u] = \int_{-1}^1 x^4 u'(x)^2 dx,$$
+such that $u(-1) = -1$, $u(1) = 1$,  where $u: [-1, 1] \rightarrow \R$.
+\section*{Solution}
+We have that 
+$$\int_{-1}^1 x^4 u'(x)^2 dx \geq 0$$
+since
+$$ x^4 u'(x)^2 \geq 0 \qquad \textrm{for} \qquad x \in [-1, 1].$$
+Then 
+$$I[u] \geq 0$$
+that is the functional is lower bounded by zero. We can rewrite
+$$F(x, u(x), u'(x)) = F(x, y, z) = x^4 z^2.$$
+Now we apply the Euler-Lagrange equations:
+$$\frac{d}{dx}\frac{\partial F}{\partial z}(x, z) = \frac{\partial F}{\partial y}(y).$$
+Since $\frac{\partial F}{\partial y}(y)=0$, we obtain
+$$\frac{\partial F}{\partial z}(x, z) = x^4 2 z$$
+$$\frac{d}{dx}(x^4 2z) = 0$$
+$$4x^3 2 u''(x) = 0.$$
+Integrating we obtain
+$$u(x) = -\frac{A}{x^3} + B,$$
+and considering the boundary conditions:
+$$u(-1) = -1 \qquad u(1) = 1,$$
+$$\begin{cases}
+A + B = -1 \\
+B - A = 1
+\end{cases}$$
+we obtain
+$$A = -1 \qquad B = 0.$$
+Then
+$$u(x) = \frac{1}{x^3}.$$
+Now let's do a function study.
+$$u(x) = \frac{1}{x^3} \qquad x \in [-1, 1].$$
+horizontal asymptotes \par 
+$$\lim_{x \rightarrow 1} u(x) = 1 \qquad \lim_{x \rightarrow -1} u(x) = -1,$$
+there are not horizontal asymptotes. \par 
+vertical asymptotes \par  
+$$\lim_{x \rightarrow 0^{\pm}} u(x) = \lim_{x \rightarrow \pm} \frac{1}{x^3} = \pm \infty,$$
+then $x = 0$ is a vertical asymptote. \par  
+first derivative \par  
+$$u'(x) = [x^{-3}]' = -3 x^{-3} = -\frac{3}{x^4}$$
+$$u'(x) \geq 0 \qquad -\frac{3}{x^4} \geq 0 \qquad \nexists x \in [-1, 1] \qquad \textrm{s.t.} \qquad u'(x) \geq 0$$
+$$\implies u'(x) < 0 \qquad \forall x \in [-1, 1].$$
+Then the function is strictly decreasing. \par  
+second derivative \par  
+$$u''(x) = [-3 x^{-4}]' = 12 x^{-5} = \frac{12}{x^5}$$
+$$u''(x) \geq 0 \qquad \frac{12}{x^5} \geq 0 \qquad \textrm{for} \qquad x > 0.$$
+ Now we know that $u \notin C^1([-1, 1])$ since it diverges around the origin. \par 
+ We now can show if there exists a minimizing sequence. We consider $0 z \epsilon < 1$ and a function
+ $$v_{\epsilon}(x) = \begin{cases}
+ 						-1 \qquad \textrm{if} \qquad x \leq -\epsilon \\
+ 						\frac{x}{\epsilon} \qquad \textrm{if} \qquad -\epsilon < x < \epsilon \\
+ 						1 \qquad \textrm{if} \qquad x \geq \epsilon
+ 					 \end{cases}$$
+The functional becomes
+$$I[v_{\epsilon}] = \int_{-1}^1 x^4 v_{\epsilon}^{'2}(x) dx = \int_{-1}^{-\epsilon} x^4 (-1)^2 dx = \int_{-\epsilon}^{\epsilon} x^4 (\frac{1}{\epsilon})^2 dx + \int_{\epsilon}^1 x^4 dx $$
+$$[\frac{x^5}{5}]_{-1}^{-\epsilon} + \frac{1}{\epsilon^2}[\frac{x^5}{5}]_{-\epsilon}^{\epsilon} + [\frac{x^5}{5}]_{\epsilon}^1 = \frac{2}{5} \epsilon^3.$$
+Then
+$$I[v_{\epsilon}] = \frac{2}{5}\epsilon^3.$$
+For $\epsilon \rightarrow 0^{\pm}$, we obtain the function
+$$v_0(x) = \begin{cases}
+				-1 \qquad \textrm{if} \qquad x < 0 \\
+				1 \qquad \textrm{if} \qquad x > 0.
+		   \end{cases}$$
+This function is not continuous and not even of class $C^1([-1, 1])$. The fact that the functional is lower bounded does not insure the existence of the minimum.
 \clearpage
 
 \end{document}

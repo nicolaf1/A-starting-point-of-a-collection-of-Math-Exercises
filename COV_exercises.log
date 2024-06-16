@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.7)  16 JUN 2024 09:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.7)  16 JUN 2024 10:36
 entering extended mode
  \write18 enabled.
-**FA_exercises.tex
-(./FA_exercises.tex
+**COV_exercises.tex
+(./COV_exercises.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -503,33 +503,23 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box66
 )
-(./FA_exercises.aux
+(./COV_exercises.aux)
+\openout1 = `COV_exercises.aux'.
 
-LaTeX Warning: Label `fig: 4.3' multiply defined.
-
-
-LaTeX Warning: Label `fig: 4.3' multiply defined.
-
-
-LaTeX Warning: Label `fig: 4.3' multiply defined.
-
-)
-\openout1 = `FA_exercises.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -587,13 +577,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -607,174 +597,58 @@ LaTeX Warning: No \author given.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Chapter 1.
-Missing character: There is no ù in font nullfont!
-
-Overfull \hbox (12.07954pt too wide) in paragraph at lines 91--92
- [] 
- []
-
-
-Overfull \hbox (6.39128pt too wide) in paragraph at lines 113--114
- [] 
- []
-
 [2
 
-]
-Missing character: There is no ù in font nullfont!
+] [3] [4
 
-Overfull \hbox (12.07954pt too wide) in paragraph at lines 141--142
- [] 
+] [5]
+Overfull \hbox (2.03018pt too wide) detected at line 199
+[][] \OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML
+/cmm/m/it/10 v[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/
+it/10 dx \OT1/cmr/m/n/10 = [][] 10(\OMS/cmsy/m/n/10 ^^@[]\OML/cmm/m/it/10 e[]\O
+T1/cmr/m/n/10 )\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [][] 10[\OML/cmm/m/it/10 e
+[]\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = 10[\OML/cmm/m/it/10 
+e[]\OT1/cmr/m/n/10 ][] = 10(\OML/cmm/m/it/10 e[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/
+m/it/10 e[]\OT1/cmr/m/n/10 ) = 0\OML/cmm/m/it/10 :
  []
 
-[3] [4
+[6
 
-] [5] [6]
-Overfull \hbox (25.08676pt too wide) detected at line 288
-[][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML
-/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [][] [] \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (
-\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [] [][
-] \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/
-cmm/m/it/10 dx \OT1/cmr/m/n/10 = [] [][] [] []\OML/cmm/m/it/10 dx \OT1/cmr/m/n/
-10 = [] [] [] [][] \OMS/cmsy/m/n/10 j []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 nx\OT
-1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 dx:
- []
+] [7
 
-[7
-
-] [8
-
-] [9]
-Chapter 2.
-[10
-
-
-] [11]
-
-LaTeX Font Warning: Command \huge invalid in math mode on input line 425.
-
-
-LaTeX Font Warning: Command \huge invalid in math mode on input line 427.
-
-
-LaTeX Font Warning: Command \huge invalid in math mode on input line 429.
-
-
-LaTeX Font Warning: Command \huge invalid in math mode on input line 431.
-
-
-LaTeX Font Warning: Command \huge invalid in math mode on input line 433.
-
-
-LaTeX Font Warning: Command \huge invalid in math mode on input line 438.
-
-Missing character: There is no ; in font nullfont!
-[12] [13
-
-] [14] [15
-
-] [16] [17]
-Overfull \hbox (49.06865pt too wide) in paragraph at lines 687--688
- [] 
- []
-
-
-Overfull \hbox (5.56352pt too wide) detected at line 703
-[][] \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
- x\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/1
-0 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 dx \O
-T1/cmr/m/n/10 + [][] []\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [][] 1\OML/cmm/m/i
-t/10 dx \OT1/cmr/m/n/10 + [][] []\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 + [][] []\
-OML/cmm/m/it/10 dx < \OT1/cmr/m/n/10 +\OMS/cmsy/m/n/10 1\OML/cmm/m/it/10 ;
- []
-
-[18
-
-]
-Chapter 3.
-[19
-
-] [20] [21
-
-]
-Overfull \hbox (6.85365pt too wide) detected at line 824
-[][] \OT1/cmr/m/n/10 + [][] = 2([][] + [][]) = 2(\OML/cmm/m/it/10 d\OT1/cmr/m/n
-/10 (\OML/cmm/m/it/10 x; C[]\OT1/cmr/m/n/10 )[] + \OML/cmm/m/it/10 d\OT1/cmr/m/
-n/10 (\OML/cmm/m/it/10 x; C[]\OT1/cmr/m/n/10 )[])
- []
-
-[22
-
-] [23]
-Chapter 4.
-Missing character: There is no ( in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no ; in font nullfont!
-[24
-
-
-] [25] [26
-
-] (./FA_exercises.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] [8] (./COV_exercises.aux) ) 
 Here is how much of TeX's memory you used:
- 23459 strings out of 480204
- 472228 string characters out of 5895011
- 704984 words of memory out of 5000000
- 41127 multiletter control sequences out of 15000+600000
- 492891 words of font info for 93 fonts, out of 8000000 for 9000
+ 16109 strings out of 480204
+ 319407 string characters out of 5895011
+ 588063 words of memory out of 5000000
+ 33779 multiletter control sequences out of 15000+600000
+ 487918 words of font info for 74 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 84i,9n,89p,435b,762s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
-0pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl1000.
-600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx100
-0.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
-000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
-x1440.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cbx2488.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecbx2074.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecrm1200.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecbi2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msbm7.pfb>
-Output written on FA_exercises.pdf (26 pages, 326551 bytes).
+ 84i,9n,89p,436b,775s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/nicola/.texlive2021/texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecbx1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecsl1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk
+/ljfour/jknappen/ec/ecrm1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/nicola/.texlive2021/texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/nicola/.texlive2021/texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/nicola/.texlive2021/texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/nicola/.texlive2021/texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecbi2074.600pk></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on COV_exercises.pdf (8 pages, 165570 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
+ 247 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
