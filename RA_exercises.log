@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.7)  16 JUN 2024 09:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.7)  26 DEC 2024 21:14
 entering extended mode
  \write18 enabled.
 **RA_exercises.tex
@@ -609,28 +609,50 @@ File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 de.tex
 File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.fi
+llbetween.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibraryfillb
+etween.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryintersections.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersection
+s.code.tex
+\pgf@intersect@solutions=\count307
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibrarydecor
+ations.softclip.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfcontrib/pgflibraryfillbe
+tween.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.de
+corations.softclip.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.cod
+e.tex
+File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count307
+\l__color_backend_stack_int=\count308
 \l__pdf_internal_box=\box67
-)
-(./RA_exercises.aux)
+) (./RA_exercises.aux)
 \openout1 = `RA_exercises.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -668,16 +690,16 @@ LaTeX Font Info:    ... okay on input line 55.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count308
+\scratchcounter=\count309
 \scratchdimen=\dimen283
 \scratchbox=\box68
-\nofMPsegments=\count309
-\nofMParguments=\count310
+\nofMPsegments=\count310
+\nofMParguments=\count311
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count311
+\MPscratchCnt=\count312
 \MPscratchDim=\dimen284
-\MPnumerator=\count312
-\makeMPintoPDFobject=\count313
+\MPnumerator=\count313
+\makeMPintoPDFobject=\count314
 \everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -692,14 +714,14 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 55.
+ on input line 57.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -728,7 +750,7 @@ Chapter 1.
 ] [9
 
 ] [10]
-Overfull \hbox (62.24295pt too wide) in paragraph at lines 370--371
+Overfull \hbox (62.24295pt too wide) in paragraph at lines 372--373
  [] 
  []
 
@@ -745,7 +767,7 @@ Overfull \hbox (62.24295pt too wide) in paragraph at lines 370--371
 ] [16
 
 ]
-Overfull \hbox (1.90837pt too wide) in paragraph at lines 509--511
+Overfull \hbox (1.90837pt too wide) in paragraph at lines 511--513
 \T1/cmr/m/n/10 Show that $\OML/cmm/m/it/10 f[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it
 /10 f$ \T1/cmr/m/n/10 with $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
  t\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 t\OMS/cmsy/m/n/10 j$ \
@@ -769,40 +791,57 @@ m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]\OML/cmm/m/it/1
 
 ] [24] [25
 
-] (./RA_exercises.aux) ) 
+]
+
+Package pgfplots Warning: 'fill between': Could not activate graphics layer 'pr
+e main'. Filled path will be on top of the other ones. Please ensure that 'pre 
+main' is somewhere in the layer list (or set '/tikz/fill between/on layer='). o
+n input line 792.
+
+Package pgfplots info on input line 792: fillbetween: skipping empty intersecti
+on segment no 0
+Missing character: There is no ; in font nullfont!
+[26
+
+] [27
+
+] [28] [29] [30
+
+] [31] (./RA_exercises.aux) ) 
 Here is how much of TeX's memory you used:
- 27573 strings out of 480204
- 689066 string characters out of 5895011
- 1117736 words of memory out of 5000000
- 45108 multiletter control sequences out of 15000+600000
+ 28974 strings out of 480204
+ 725421 string characters out of 5895011
+ 1143922 words of memory out of 5000000
+ 46481 multiletter control sequences out of 15000+600000
  488253 words of font info for 75 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 84i,13n,89p,708b,771s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour/j
-knappen/ec/tcrm1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecsl1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/ljfo
-ur/jknappen/ec/ecbx1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/lj
-four/jknappen/ec/ecrm1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecbx1440.600pk> </home/nicola/.texlive2021/texmf-var/fonts/p
-k/ljfour/jknappen/ec/ecbx2488.600pk> </home/nicola/.texlive2021/texmf-var/fonts
-/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/nicola/.texlive2021/texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/nicola/.texlive2021/texmf-var/f
-onts/pk/ljfour/jknappen/ec/ecbi2074.600pk></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on RA_exercises.pdf (25 pages, 239780 bytes).
+ 84i,13n,89p,740b,823s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/nicola/.texlive2021/texmf-var/fonts/pk/ljf
+our/jknappen/ec/tcrm1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecsl1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/pk
+/ljfour/jknappen/ec/ecbx1000.600pk> </home/nicola/.texlive2021/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/nicola/.texlive2021/texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/nicola/.texlive2021/texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/nicola/.texlive2021/texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/nicola/.texlive2021/texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/nicola/.texlive2021/texmf-
+var/fonts/pk/ljfour/jknappen/ec/ecbi2074.600pk></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on RA_exercises.pdf (31 pages, 271264 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
+ 363 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

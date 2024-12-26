@@ -22,6 +22,8 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, calc, quotes}
 \usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
 
 
 \newcommand{\N}{\mathbb{N}}
@@ -727,7 +729,7 @@ $$\lim_{(h, k) \rightarrow (0,0)} \frac{f(h, k) - f(0, 0) - \nabla f(0, 0) \begi
 if $\alpha = 0$ the limit is
 $$\lim_{(h, k) \rightarrow (0,0)} \frac{k^2}{\sqrt{4 h^2 + 3 k^2} \sqrt{h^2 + k^2}} = \nexists.$$
 If $\alpha > 0$ in polar coordinates:
-$$\lim_{\rho \rightarrow 0} \frac{\rho^{\alpha} |\cos \theta|^{\alpha} \rho^2 (\sin^2 \theta)}{\rho \rho \sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}} = 0 \qquad \forall \theta.$$
+$$\lim_{\rho \rightarrow 0} \frac{\rho^{\alpha} |\cos \theta|^{\alpha} \rho^2 (\sin^2 \theta)}{\rho  \sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}} = 0 \qquad \forall \theta.$$
 Now we show if it is uniform in $\theta$.
 $$|\frac{\rho^{\alpha} |\cos \theta|^{\alpha} \sin^2 \theta}{\sqrt{4 \cos^2 \theta + 3 \sin^2 \theta}}| \leq \rho^{\alpha} \frac{|\cos \theta|^{\alpha} \sin^2 \theta}{\sqrt{3 \sin^2 \theta}} = \frac{\rho^{\alpha} |\cos \theta|^{\alpha} |\sin^2 \theta|}{\sqrt{3} \sin \theta} = \rho^2 \frac{|\cos \theta|^{\alpha} |\sin \theta|}{\sqrt{3}} \leq \frac{\rho^2}{\sqrt{3}}.$$
 It is uniform in $\theta$. Then $L = 0$ uniformly in $\theta$. \par  
@@ -761,9 +763,197 @@ $$\sup_{w \in \mathbb{R}^n, \qquad \norm{w} = 1} \norm{Df(x) w} \leq L$$
 then
 $$\norm{Df(x)} \leq L.$$
 \clearpage
-
-
-
-
-
+\section*{Exercise $21$}
+Compute the value of the double integral
+$$\int \int_T (x^3 e^{y^2} + x^2 y) dx dy$$
+over the region $T$ delimited by the curves $y = x^2$ and $y = x^4$.
+\section*{Solution}
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+\draw[->] (-1.5,0)--(1.5,0) node[below]{$x$};   
+\draw[->] (0,-0.2)--(0,1.5)  node[left]{$y$};
+\draw[dashed] (-1,0.0)--(-1,1.0);
+\draw[dashed] (1,0.0)--(1,1.0);
+\draw[dashed] (-1,1.0)--(1,1.0);
+\path
+(-1, 0) node[below]{$-1.0$};
+\path
+(1, 0) node[below]{$1.0$};
+\path
+(0, 1) node[above left]{$1.0$};
+\foreach \i in {-1.0,-0.5, 0.,...,1.0} \draw (\i,-0.02)--(\i,0.02);
+\foreach \i in {0.,...,1.0} \draw (-0.02, \i)--(0.02, \i);
+\draw[line width = 1.5, blue, domain=-1.:1., samples=100, variable=\x, name path=A] plot ({\x}, {\x*\x});
+\draw[ line width = 1.5, blue, domain=-1.:1., samples=100, variable=\x, name path=B] plot ({\x}, {\x*\x*\x*\x});
+\tikzfillbetween[
+    of=A and B,split,
+    every even segment/.style={pattern=horizontal lines dark blue}
+  ] {pattern=grid};
+\end{tikzpicture}
+\end{center}
+\end{figure}
+The region $T$ is sysmmetric with respect to the $y$-axis. Furthermore
+$$\int \int_{T} x^3 e^{y^2} dx dy = 0$$
+since $f(x, y) = x^3 y^2$ is an odd function with respect to the $x$-axis. 
+$$\int \int_{T} x^2 y dx dy$$
+is even. Then
+$$2 \int_0^1 x^2 \int_{x^4}^{x^2} y dy dx = 2 \int_0^1 x^2 [\frac{y^2}{2}]_{x^4}^{x^2} dx = \int_0^1 x^2(x^4 - x^8) dx = [\frac{x^7}{7} - \frac{x^11}{11}]_0^2 = \frac{1}{7} - \frac{1}{11}.$$
+\clearpage
+\section*{Exercise $22$}
+Let $f_n: \R \rightarrow \R$ given by:
+$$
+f_n(x) = 
+\begin{cases}
+1 \qquad   -1 \leq x \leq -\frac{1}{n^{\alpha}} \\	
+-nx \qquad -\frac{1}{n^{\alpha}} < x \leq 0 
+\end{cases}$$
+with $\alpha > 0$. Study the pointwise and uniform convergences. Then show the result of the integrals
+$$\int_{-1}^0 f(x) dx \qquad \textrm{and} \qquad \int_{-1}^0 f_n(x) dx.$$
+\section*{Solution}
+First of all we can plot the graph of the function $f_n(x)$.
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=6.]
+\draw[->] (-1.5,0)--(0.5,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,1.5)  node[left]{$f_n$};
+\draw[dashed] (-1,-0.5)--(-1,1.5);
+\draw[dashed] (-1./4,-0.5)--(-1./4,1.5);
+\draw[dashed] (-1./4,1./2)--(0,1./2);
+\draw[blue] (-1./4, 1./2) circle (1pt);
+\filldraw[blue] (-1./4,1) circle (1pt);
+\path
+(0,0) node[below left]{$0$};
+\path
+(-1,0) node[below left]{$-1$};
+\path
+(-1./4,0) node[below left]{$-\frac{1}{n^{\alpha}}$};
+\path
+(0,1./2) node[below right]{$-\frac{1}{n^{\alpha - 1}}$};
+\foreach \i in {-1.,-0.9, -0.8,...,0.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=-1.:-1./4, samples=100, variable=\x] plot ({\x}, { 1});
+\draw[blue, domain=-1./4:0.0, samples=100, variable=\x] plot ({\x}, {-2*\x});
+\end{tikzpicture}
+\end{center}
+\end{figure} 
+We have that
+\begin{itemize}
+\item if $\alpha - 1 > 0$ the functions grow up;
+\item if $\alpha - 1 > < 0$ the functions go down;
+\item if $\alpha - 1 = 0$ the functions are continuous;
+\end{itemize}
+\vspace{1.5 cm}
+Now we can consider the pointwise convergence. \par 
+If $x = 0$ 
+$$\lim_{n \rightarrow +\infty} f_n(x) = \lim_{n \rightarrow +\infty} f_n(0) = 0 \qquad \forall n \in \N$$
+We now can make the following consideration: if $x < 0$ the interval $]-\frac{1}{n^{\alpha}}; 0 [$ narrows for $n$ that becomes greater and the variable $x$ is always outside, so that the function x does one everywhere except in zero. The pointwise limit is:
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=6.]
+\draw[->] (-1.5,0)--(0.5,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,1.5)  node[left]{$f_n$};
+\draw[dashed] (-1,-0.5)--(-1,1.5);
+\draw[blue] (0., 1.) circle (1pt);
+\filldraw[blue] (0.,0.) circle (1pt);
+\path
+(0,0) node[below left]{$0$};
+\path
+(-1,0) node[below left]{$-1$};
+\path
+(-1./4,0) node[below left]{$-\frac{1}{n^{\alpha}}$};
+\path
+(0,1./2) node[below right]{$-\frac{1}{n^{\alpha - 1}}$};
+\foreach \i in {-1.,-0.9, -0.8,...,0.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=-1.:0., samples=100, variable=\x] plot ({\x}, { 1});
+\end{tikzpicture}
+\end{center}
+\end{figure} 
+Now we consider the uniform convergence: what is the maximum distance between the pointwise limit and the function?
+$$\sup_{x \in [-1; 0]} | f_n(x) - f(x)|$$
+If we were to imagine putting the pointwise limit and the function in the same graph, we would see that the distance between these two functions would be equal to one even though it is never taken. Then
+$$\lim_{n \rightarrow +\infty} \sup_{x \in [-1; 0]} |f_n(x) - f(x)| = 1$$
+and the convergence is not uniform, for no $\alpha$. \par 
+Now we compute the integrals.
+$$\int_{-1}^0 f(x) dx = \int_{-1}^0 1 dx = 1$$
+and
+$$\int_{-1}^0 f_n(x) dx = 1 - \frac{1}{n^{\alpha}} \cdot 1 + \frac{1}{n^{\alpha}} \cdot \frac{1}{n^{\alpha - 1}} \cdot \frac{1}{2} = 1 - \frac{1}{n^{\alpha}} + \frac{1}{n^{2\alpha -1}} \cdot \frac{1}{2}$$
+$$\lim_{n \rightarrow +\infty} 1 - \frac{1}{n^{\alpha}} + \frac{1}{n^{2\alpha -1}} \cdot \frac{1}{2} = $$
+\begin{itemize}
+\item if $2\alpha -  1 > 0$, $l = 1$;
+\item if $2\alpha - 1 = 0$, $l = \frac{3}{2}$;
+\item if $2\alpha - 1 < 0$, $l = \nexists$.
+\end{itemize}
+Only in the first case does the passage of the limit under the sign of the integral apply, for
+$$\alpha > \frac{1}{2}.$$
+\clearpage
+\section*{Exercise $23$}
+How much is the distance between $f,g \in C^0(D; \R)$, with $D$ the closed circle of center $(-1, 0)$ and radius $1$ and $f(x, y) = 2x + 2$, $g(x, y) = 2y$?
+\section*{Solution}
+The norm of the space of continuous functions $C^0$ is:
+$$d_{\infty}(f, g) = \sup_{x \in D} |g(x) - f(x)| = \max_{x \in D} |g(x) - f(x)|,$$
+since $f, g$ are continuous, then the function $|f - g|$ is continuous and applying the Weierstrass Theorem we have that $\sup = \max$. \par 
+Now we define
+$$g(x) - f(x) = F(x)$$
+as
+$$F(x) = |2x - 2y + 2|$$
+and we need to  find the maximum of this function over a compact subset of $\R^2$. The problem is the modulus. We can divide the problem into two subproblems:
+$$F(x)|_{D_1} = 2x - 2y + 2$$
+$$F(x)|_{D_2} = 2y - 2x - 2.$$
+On $D_1$ we have
+$$F(x) = 2(x - y + 1)$$
+and on $D_2$ we have
+$$F(x) = 2(y - x - 1)$$
+so that $F(x)$ is constant along the curves
+$$\gamma_c : x - y = c,$$
+that are straight lines.
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+\draw[->] (-2.5,0)--(2.5,0) node[below]{$t$};   
+\draw[->] (0,-2.5)--(0,2.5)  node[left]{$f_n$};
+\path
+(0,0) node[below left]{$0$};
+\path
+(1,0) node[below right]{$1$};
+\path
+(0,1) node[above left]{$1$};
+\path
+(-1,0) node[below left]{$-1$};
+\path
+(0,-1) node[below left]{$-1$};
+\path
+(-1,1./2) node[below left]{$D_2$};
+\path
+(-1,-1./2) node[below left]{$D_1$};
+\draw[blue] (-1,0) circle (1.0);
+\foreach \i in {-1.,-0.9, -0.8,...,0.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[red, domain=-2.5:1.5, samples=100, variable=\x] plot ({\x}, { \x +1 - sqrt 2});
+\draw[red, domain=-2.5:1.5, samples=100, variable=\x] plot ({\x}, { \x + 1 + sqrt 2});
+\draw[green, domain=-2.5:1.5, samples=100, variable=\x] plot ({\x}, { \x });
+\draw[green, domain=-2.5:1.5, samples=100, variable=\x] plot ({\x}, { \x + 1});
+\draw[->] (2,2)--(2.5,1.5)  node[right]{$c \quad \textrm{grows}$};
+\end{tikzpicture}
+\end{center}
+\end{figure} 
+For $D_1$ the maximum point will be the tangent point with the circonference and for $D_2$ the minimum point will be the same. So to determine it we need to solve the following system.
+$$\begin{cases}
+(x + 1)^2 + y^2 = 1 \\
+y = x - c
+\end{cases}$$
+by substitution we have
+$$(x + 1)^2 + (x - c)^2 = 1$$
+$$x^2 + 2x + 1 + x^2 - 2c x + c^2 = 1$$
+we have a second order equation
+$$2x^2 + 2x(1 - c) + c^2 = 0$$
+we can now apply the tangent condition $\Delta = 0$,
+$$4(1 - c)^2 - 8 c^2 = 0$$
+$$1 - 2c + c^2 - 2c^2 = 0$$
+$$c^2 + 2c - 1 = 0$$
+then
+$$c_1 = -1 - \sqrt{2} \qquad c_2 = -1 + \sqrt{2}.$$
+Then by substituting we have that the maximum is
+$$\max_{D} f = 2 \sqrt{2}$$
+and the minimum is 
+$$\min_{D} f = - 2 \sqrt{2}.$$
+\clearpage
 \end{document}

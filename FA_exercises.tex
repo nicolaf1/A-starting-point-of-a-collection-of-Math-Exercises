@@ -13,6 +13,7 @@
 \usepackage{float}
 \usepackage{rotating}
 
+\usepackage{cancel}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -21,7 +22,8 @@
 
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, calc, quotes}
-
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -220,6 +222,7 @@ We can now apply the Dominated Convergence Theorem.
 $$\lim_{n \rightarrow \infty} \int_0^1 \frac{x}{1 + x^{2n}} dx = \int_0^1 \lim_{n \rightarrow \infty} \frac{x}{1 + x^{2n}} dx = \int_0^1 x dx = \frac{1}{2}.$$
 The solution is
 $$\lim_{n \rightarrow \infty} \int_0^1 \frac{x}{1 + x^{2n}} dx = \frac{1}{2}.$$
+\clearpage
 \section*{Exercise $3$}
 Studying convergence in $L^1([1, +\infty))$ of
 $$f_n(x) = \frac{\cos(nx)}{n^2 + x} \frac{1}{x^2} \qquad \forall x \geq 1 \qquad \forall n \in \mathbb{N}.$$
@@ -336,6 +339,126 @@ $$\int_0^{\infty} \frac{1}{\sqrt{x}} \sum_{k=0}^{\infty} e^{-(\alpha^k)\sqrt{x}}
 		\frac{2 \alpha}{\alpha - 1} \qquad \textrm{if} \qquad \alpha > 1 \\
 		\infty \qquad \textrm{if} \qquad \alpha \in (0, 1].	 
 	 \end{cases}$$
+\clearpage
+\section*{Exercise $6$}
+Let $g \in L^p(\R)$, $1 \leq p \leq +\infty$. Studying the convergence in $L^p$ of
+$$f_n(x) = \arctan{(n |x|)} \cdot g(x) \qquad \forall x \in \R, \qquad n \in \N$$
+\section*{Solution}
+$$f_n(x) = \arctan(n |x|) \cdot g(x) \qquad \forall x \in \R, \qquad n \in \N$$
+First of all we need to know the pointwise limit of the function. We can consider
+$$\phi_n(x) = \arctan(n |x|) \qquad \forall x \in \R, \qquad n \in \N$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.5, trig format=rad]
+\draw[->] (-5.,0)--(5.,0) node[below]{$x$};   
+\draw[->] (0,-2.5)--(0,2.5)  node[left]{$y$};
+\foreach \i in {-5.,-4.5,-4.,...,0., ..., 4., 4.5,5.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=-5.:5., samples=200, variable=\x] plot ({\x}, {atan(abs(\x))});
+\draw[green, domain=-5.:5., samples=200, variable=\x] plot ({\x}, {atan(2*abs(\x))});
+\draw[orange, domain=-5.:5., samples=200, variable=\x] plot ({\x}, {atan(3*abs(\x))});
+\draw[cyan, domain=-5.:5., samples=200, variable=\x] plot ({\x}, {atan(4*abs(\x))});
+\draw[red, domain=-5.:5., samples=200, variable=\x] plot ({\x}, {atan(5*abs(\x))});
+\draw[brown, domain=-5.:5., samples=1000, variable=\x] plot ({\x}, {atan(10*abs(\x))});
+\draw[orange, domain=-5.:5., samples=1000, variable=\x] plot ({\x}, {atan(100*abs(\x))});
+\draw[red, domain=-5.:5., samples=1000, variable=\x] plot ({\x}, {atan(1000*abs(\x))});
+\draw[dash dot, domain=-5.:5., samples=100, variable=\x] plot ({\x}, {pi/2.});
+\end{tikzpicture}
+\end{center}
+\end{figure} \vspace{1 cm}
+The pointwise limit of the function is:
+$$
+\lim_{n \rightarrow +\infty} \phi_n(x) = 
+\begin{cases}
+0 \qquad \textrm{if} \qquad x = 0 \\
+\frac{\pi}{2} \qquad \textrm{if} \qquad x \neq 0
+\end{cases}.$$
+So that from the measure theory we have:
+$$\phi_n \rightarrow \frac{\pi}{2} \qquad \mu - q.o. \qquad \textrm{in} \qquad \R$$
+The function $g$ doesn't depend on $n$, then:
+$$\lim_{n \rightarrow +\infty} f_n(x) = \lim_{n \rightarrow + \infty} \phi_n \cdot g = \frac{\pi}{2} \cdot g \qquad \mu-q.o. \qquad \textrm{in} \qquad \R.$$
+The pointwise limit of the functions $f_n(x)$ is $\frac{\pi}{2} \cdot g.$ \par 
+From the definition of the convergence in the $L^p$ spaces we need 
+$$\norm{f_n - f}_{L^p} = ?$$
+where $f$ is the pointwise limit. We need to use the Dominated Convergence Theorem. \par 
+Now we search for the domination function.
+$$\norm{f_n - f}_{L^p(\R)} = \int_{\R} |f_n - f|^p dx = \star$$
+$$|f_n(x) - \frac{\pi}{2}g(x)| = |\arctan(n|x|) \cdot g(x) - \frac{\pi}{2} g(x)|$$
+$$-\frac{\pi}{2} \leq \arctan{(n|x|)} \leq \frac{\pi}{2}$$
+$$\star = |g(x)| |\arctan{(n|x|)} - \frac{\pi}{2}|$$
+then
+$$|f_n(x) - \frac{\pi}{2} g(x)|^p = |g(x)|^p |\arctan{(n|x|)} - \frac{\pi}{2}|^p \leq (\frac{\pi}{2})^p |g(x)|^p$$
+for $\mu-q.o. \qquad x \in \R \qquad \textrm{and} \qquad \forall n \in \N$. \par
+\vspace{0.5 cm}    
+By hypotheses $g \in L^p(\R)$, then $|g|^p \in L^1(\R)$ and so $(\frac{\pi}{2})^p |g(x)|^p \in L^1(\R)$. \par 
+\vspace{0.5 cm}
+We can apply the Dominated Convergence Theorem.
+$$\lim_{n \rightarrow +\infty} \norm{f_n - f}_{L^p(\R}^p = \lim_{n \rightarrow +\infty} \int_{\R} |f_n(x) - f(x)|^p dx = \int_{\R} \lim_{n \rightarrow +\infty} |f_n(x) - f(x)|^p dx = $$
+$$= \int_{\R} \lim_{n \rightarrow +\infty} |\arctan{(n |x|)} \cdot g(x) - \frac{\pi}{2} g(x)|^p dx \leq |g(x)|^p \int_{\R} \int_{\R} \lim_{n \rightarrow +\infty} |\arctan{(n |x|)} - \frac{\pi}{2}|^p dx = $$
+$$= |g(x)|^p \int_{\R} |\frac{\pi}{2} - \frac{\pi}{2}| dx = 0$$
+then
+$$\lim_{n \rightarrow +\infty} \norm{f_n - f}_{L^p(\R)} \rightarrow 0$$
+$$\iff$$
+$$f_n \rightarrow f \qquad \textrm{in} \qquad L^p(\R)$$
+for $n \rightarrow +\infty$. Then
+$$f_n(x) \rightarrow \frac{\pi}{2} g(x) \qquad \mu-q.o. \qquad \forall x \in \R \qquad \textrm{in} \qquad L^p(\R) \qquad \textrm{for} \qquad n \rightarrow +\infty .$$
+\clearpage
+\section*{Exercise $7$}
+Let 
+$$f_n(x) := \frac{\sin(nx)}{n^2 x^{\frac{3}{2}}} \qquad \forall x \in (0, +\infty), \qquad \forall n \in \N.$$
+Compute the limit of $\{ f_n \} \qquad \textrm{in} \qquad L^1((0, + \infty))$. 
+\section*{Solution}
+Let draw the graph of $f_n(x)$.
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.0, trig format=rad]
+\draw[->] (0.,0)--(10.,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,12.0)  node[left]{$y$};
+\foreach \i in {0.,0.5, 1.0,  ..., 4., 4.5,5.0, ..., 8.0, 8.5, 9.0, 9.5, 10.0} \draw (\i,-0.02)--(\i,0.02);
+\draw[blue, domain=0.01:10., samples=200, variable=\x] plot ({\x}, {sin(\x)/(\x^(3/2))});
+\draw[cyan, domain=0.01:10., samples=200, variable=\x] plot ({\x}, {sin(2*\x)/(2^2*\x^(3/2))});
+\draw[green, domain=0.01:10., samples=200, variable=\x] plot ({\x}, {sin(3*\x)/(3^2*\x^(3/2))});
+\draw[orange, domain=0.01:10., samples=200, variable=\x] plot ({\x}, {sin(4*\x)/(4^2*\x^(3/2))});
+\draw[magenta, domain=0.01:10., samples=200, variable=\x] plot ({\x}, {sin(5*\x)/(5^2*\x^(3/2))});
+\draw[red, domain=0.01:10., samples=200, variable=\x] plot ({\x}, {sin(6*\x)/(6^2*\x^(3/2))});
+\end{tikzpicture}
+\end{center}
+\end{figure} \vspace{1 cm}
+We have
+$$f_n(x) \sim \frac{\bcancel{n} x}{n^{\bcancel{2} x^{\frac{3}{2}}}} = \frac{1}{n \sqrt{x}} \qquad \textrm{for} \qquad x \rightarrow 0^+, \qquad \forall n \in \N,$$
+furthermore
+$$|f_n(x)| \leq \frac{1}{n^2 x^{\frac{3}{2}}} \qquad \forall x \in (0, +\infty) \qquad \forall n \in \N^+.$$
+If we consider the summability criteria
+$$\int_1^{+\infty} \frac{1}{x^{\alpha}} dx = \begin{cases}
+												\frac{1}{\alpha - 1} \qquad \textrm{if} \qquad \alpha > 1\\
+												+\infty \qquad \textrm{if} \qquad \alpha \leq 1
+											\end{cases}$$
+$$\int_0^1 \frac{1}{x^{\alpha}} dx = \begin{cases}
+												\frac{1}{\alpha - 1} \qquad \textrm{if} \qquad \alpha < 1\\
+												+\infty \qquad \textrm{if} \qquad \alpha \geq 1
+											\end{cases}$$
+we have that
+$$\{ f_n \} \subset L^1((0, +\infty))$$
+\vspace{0.5 cm}
+\textbf{POINTWISE CONVERGENCE}
+\vspace{0.5 cm}
+$$\lim_{n \rightarrow + \infty} f_n(x) = \lim_{n \rightarrow +\infty} \frac{\sin(n x)}{n^2 x^{\frac{3}{2}}} = \lim_{n \rightarrow +\infty} \frac{\sin (n x)}{n x} \frac{1}{n \sqrt{x}} =$$
+$$= \lim_{n \rightarrow + \infty} \frac{\sin (n x)}{x^{\frac{3}{2}}}  \cdot \frac{1}{n^2} = \textrm{\textbf{bounded}} \cdot 0 = 0$$
+So that 
+$$f(x) = 0 \qquad \textrm{is the pointwise limit} \qquad \forall x \in (0, +\infty),$$
+hence
+$$f_n \rightarrow 0 \qquad \textrm{for} \qquad n \rightarrow +\infty \qquad \textrm{in} \qquad (0, +\infty).$$
+Now we search for the dominant function. We have that $\forall x \in (0, +\infty) \qquad \textrm{and} \qquad n \in \N^+$,
+$$|f_n(x)| \leq \phi(x) := \begin{cases}
+							\frac{1}{\sqrt{x}} \qquad x \in (0, 1] \\
+							\frac{1}{x^{\frac{3}{2}}} \qquad x > 1
+						  \end{cases}$$
+For the summability criteria we have that 
+$$\phi \in L^1((0, +\infty)).$$
+Now we can apply the Dominated Convergence Theorem:
+$$\lim_{n \rightarrow +\infty} \norm{f_n - 0}_{L^1((0, +\infty))} = \lim_{n \rightarrow +\infty} \int_0^{+\infty} f_n(x) dx = \lim_{n \rightarrow + \infty} \int_0^{+\infty} \frac{\sin(n x)}{n^2 x^{\frac{3}{2}}} dx $$
+$$= \int_0^{+\infty} \lim_{n \rightarrow +\infty} \frac{\sin(n x)}{n^2 x^{\frac{3}{2}}} dx = 0$$
+$$f_n \rightarrow 0 \qquad \textrm{for} \qquad n \rightarrow +\infty \qquad \textrm{in} L^1((0, +\infty)).$$
+So the limit of $\{ f_n \}$ in $L^1((0, +\infty))$ is zero.
 \clearpage
 \chapter{$L^p$ Spaces}
 \section*{Exercise $1$}
@@ -704,6 +827,90 @@ $$\norm{g(x)}_{L^2(\R)}^2 = \int_{-\infty}^{+\infty} g(x)^2 dx = \int_{-1}^1 g(x
 since the generalized harmonic series. Then
 $$g \in L^2(\R).$$
 We have found a function $g \in (L^2(\R) \cap L^{\infty}(\R)) \setminus L^1(\R)$.
+\clearpage
+\section*{Exercise $4$}
+Studying for which $p \in [\, +\infty]$ each of the following functions belong to $L^p(\R)$.
+$$f_1(x) = \frac{e^{-x^2}}{\sqrt{|x|}}$$
+$$f_2(x) = \frac{1}{1 + |x|}$$
+$$f_3(x) = \frac{1}{1 + \sqrt{|x|}}$$
+$$f_4(x) = \frac{1}{\sqrt{|x|}(1 + \sqrt[3]{|x|}}$$
+\section*{Solution}
+In general we have that
+$$x \in L^p(\R)$$
+$$\iff$$
+$$\norm{f}_{L^p(\R)} < +\infty,$$
+indeed by definition we have
+$$L^p(\R) = \{ f \in \mathcal{M}(\R, \mu) : \norm{f}_{L^p(\R)} < +\infty \}$$
+where
+$$\norm{f}_{L^p(\R)} = \begin{cases}
+						\bigl( \int_{\R} |f|^p d \mu \bigl)^{\frac{1}{p}} \qquad \textrm{if} \qquad p \in [1; +\infty) \\
+						\esssup_{\R} |f| \qquad \textrm{if} \qquad p = +\infty
+					   \end{cases}$$
+We can start with the first function
+$$f_1(x) = \frac{e^{-x^2}}{\sqrt{|x|}}.$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\draw[->] (-.2,0)--(3.,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,4.0)  node[left]{$y$};
+\path
+(0,0) node[below left]{$0$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\foreach \i in {-0.2, 0,1., 2.,3.} \draw (\i,-0.02)--(\i,0.02);
+\foreach \i in {0,1.0} \draw (-0.02,\i)--(0.02,\i);
+\draw[blue, line width = 1.5, domain=0.1:3., samples=100, variable=\x] plot ({\x}, {exp(-(\x^2))/(sqrt(abs (\x)))});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+$$\lim_{x \rightarrow 0^{\pm}} f_1(x) = \lim_{x \rightarrow 0^{\pm}} \frac{e^{-x^2}}{\sqrt{|x|}} = \frac{1}{0^+} = +\infty$$
+then, since
+$$\sup_{\R} f_1(x) = +\infty$$
+we have
+$$\esssup_{\R} f_1(x) = \esssup_{\R} \frac{e^{-x^2}}{\sqrt{|x|}} = \sup_{\R} \frac{e^{-x^2}}{\sqrt{|x|}} = +\infty$$
+so that 
+$$f_1 \notin L^{\infty}(\R),$$
+$f_1$ is not bounded (it obvious regarding the graph). \par  
+Now we can consider tha case in which $p$ is finite, 
+$$1 \leq p < +\infty$$
+$$\int_{\R} |\frac{e^{-x^2}}{\sqrt{|x|}}|^p dx = \int_0^{+\infty} \bigl(\frac{e^{-x^2}}{\sqrt{x}}\bigl)^p dx$$
+since $f_1$ is a pair function. For $x \rightarrow 0^+$, we have
+$$\bigl(\frac{e^{-x^2}}{\sqrt{x}}\bigl)^p \sim \frac{1}{x^{\frac{p}{2}}}.$$
+Remembering the summability criterium:
+$$\int_0^1 \frac{1}{x^{\alpha}} dx = \begin{cases}
+										\frac{1}{1 - \alpha} \qquad \textrm{if} \qquad \alpha < 1 \\
+										+\infty \qquad \textrm{if} \qquad \alpha \geq 1
+									\end{cases}$$
+for $x \rightarrow 0^+$, $f \in L^p(\R)$, for $\frac{p}{2} < 1$, then for
+$$p < 2.$$
+For $x \rightarrow +\infty$ we have
+$$\bigl( \frac{e^{-x^2}}{\sqrt{|x|}} \bigl)^p \sim 0$$
+indeed
+$$\lim_{x \rightarrow 0^+}* \bigl( \frac{e^{-x^2}}{\sqrt{|x|}} \bigl)^p = \lim_{x \rightarrow 0^+} \bigl(\frac{1}{e^{x^2} \sqrt{|x|}} \bigl)^p = 0$$
+so that for $x \rightarrow +\infty$, $(f_1(x))^p$ is integrable for all $p \in [1, +\infty)$. Then
+$$f_1 \in L^p(\R) \qquad \textrm{for} \qquad 1 \leq p < 2.$$ 
+We can now consider the second function:
+$$f_2(x) = \frac{1}{1 + |x|}$$
+\begin{figure}[!ht]
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+\draw[->] (-3.,0)--(3.,0) node[below]{$x$};   
+\draw[->] (0,-0.5)--(0,4.0)  node[left]{$y$};
+\path
+(0,0) node[below left]{$0$};
+\path
+(1.0,0) node[below left]{$1.0$};
+\foreach \i in {-0.2, 0,1., 2.,3.} \draw (\i,-0.02)--(\i,0.02);
+\foreach \i in {0,1.0} \draw (-0.02,\i)--(0.02,\i);
+\draw[blue, line width = 1.5, domain=-3:3., samples=100, variable=\x] plot ({\x}, {1 / (1 + abs(\x))});
+\end{tikzpicture}
+\end{center}
+\end{figure}
+First of all we consider the case $p = + \infty$.
+$$\esssup_{\R} |f_2(x)| = \esssup_{\R} | \frac{1}{1 + |x|}| = \sup_{\R} \frac{1}{1 + |x|} = 1 < +\infty$$
+then $f_2$ is bounded for all $x \in \R$,
+$$f_2 \in L^{\infty}(\R).$$
+Now we consider the case where $p$ is finite.   ...da finire...
 \chapter{Hilbert Spaces}
 \section*{Exercise $1$}
 Let $X = (C(0,1); \norm{ \cdot }_{\infty})$ and consider
